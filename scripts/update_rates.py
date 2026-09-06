@@ -2,18 +2,30 @@
 """Fetch the latest daily mortgage rate data from FRED (Optimal Blue Mortgage
 Market Indices) and update the rate ledger bar in index.html.
 
-Data source: https://fred.stlouisfed.org/series/OBMMIC30YF
-             https://fred.stlouisfed.org/series/OBMMIC15YF
-These are public, no-API-key, no-cost series published by the Federal Reserve
-Bank of St. Louis, updated daily on business days. No commercial-use
+Uses FRED's official API (api.stlouisfed.org), not the fred.stlouisfed.org
+website's plain-text export — that export is meant for browsers and is
+unreliable from datacenter/CI IP ranges (GitHub Actions included), which
+either return an unparseable response or hang until timeout. The official
+API is built for exactly this kind of automated access.
+
+Series: https://fred.stlouisfed.org/series/OBMMIC30YF
+        https://fred.stlouisfed.org/series/OBMMIC15YF
+Free, no-cost, updated daily on business days. No commercial-use
 restriction; attribution is included in the page footer/caption.
 
-This script is meant to be run by .github/workflows/update-rates.yml on a
-schedule. It only rewrites index.html; it does not commit or push (the
+Requires a free FRED API key (get one at
+https://fred.stlouisfed.org/docs/api/api_key.html) stored as the repo
+secret FRED_API_KEY, passed to this script as an environment variable by
+.github/workflows/update-rates.yml.
+
+This script only rewrites index.html; it does not commit or push (the
 workflow handles that).
 """
+import json
+import os
 import re
 import sys
+import urllib.parse
 import urllib.request
 from datetime import datetime
 
@@ -23,49 +35,42 @@ SERIES = {
 }
 
 INDEX_HTML = "index.html"
+API_KEY = os.environ.get("FRED_API_KEY", "").strip()
 
 
 def fetch_latest(series_id):
-    url = f"https://fred.stlouisfed.org/data/{series_id}.txt"
-    req = urllib.request.Request(
-        url,
-        headers={
-            # FRED serves a different (non-data) response to generic
-            # scripted user agents; a normal browser-looking UA gets the
-            # plain-text data file.
-            "User-Agent": (
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/124.0.0.0 Safari/537.36"
-            ),
-            "Accept": "text/plain,*/*;q=0.8",
-        },
-    )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        text = resp.read().decode("utf-8", errors="replace")
+    if not API_KEY:
+        raise RuntimeError(
+            "FRED_API_KEY environment variable is not set. "
+            "Add it as a repo secret (Settings > Secrets and variables > "
+            "Actions) and pass it to this step in the workflow file."
+        )
 
-    last_date, last_val = None, None
-    for line in text.splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        parts = line.split()
-        if len(parts) != 2:
+    params = {
+        "series_id": series_id,
+        "api_key": API_KEY,
+        "file_type": "json",
+        "sort_order": "desc",
+        "limit": 10,
+    }
+    url = "https://api.stlouisfed.org/fred/series/observations?" + urllib.parse.urlencode(params)
+    req = urllib.request.Request(url, headers={"User-Agent": "deed-and-door-rate-bot/1.0"})
+
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        data = json.load(resp)
+
+    for obs in data.get("observations", []):
+        date_str, val_str = obs.get("date"), obs.get("value")
+        if not date_str or val_str in (None, ".", ""):
             continue
         try:
-            datetime.strptime(parts[0], "%Y-%m-%d")
-            float(parts[1])
+            datetime.strptime(date_str, "%Y-%m-%d")
+            float(val_str)
         except ValueError:
             continue
-        last_date, last_val = parts[0], parts[1]
+        return date_str, val_str
 
-    if last_date is None:
-        preview = " | ".join(text.splitlines()[:15])
-        raise RuntimeError(
-            f"Could not parse any data rows from {series_id} ({url}). "
-            f"First lines of response: {preview[:500]}"
-        )
-    return last_date, last_val
+    raise RuntimeError(f"No usable observations returned for {series_id}. Raw response: {data}")
 
 
 def fmt_pct(val):
