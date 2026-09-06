@@ -88,6 +88,9 @@
   .btn-primary{background:var(--brass);color:var(--navy-deep);font-weight:600;font-size:15px;padding:13px 24px;border-radius:2px;}
   .btn-ghost{border:1px solid rgba(243,239,227,0.35);color:var(--paper);font-size:15px;padding:13px 24px;border-radius:2px;}
   .hero-card{background:var(--navy-deep);border:1px solid rgba(243,239,227,0.14);border-radius:3px;padding:26px;}
+  .hero-post-tag{font-family:'IBM Plex Mono', monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--brass-light);margin-bottom:14px;}
+  .hero-post-link{display:inline-block;margin-top:18px;font-family:'IBM Plex Mono', monospace;font-size:13px;color:var(--brass-light);border-bottom:1px solid rgba(211,172,119,0.4);}
+  .hero-post-link:hover{border-bottom-color:var(--brass-light);}
   .headshot{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--brass);margin-bottom:16px;}
   .brokerage-logo{height:20px;margin-top:14px;opacity:0.9;}
   .hero-card h3{font-family:'Fraunces', serif;font-size:19px;font-weight:500;}
@@ -137,7 +140,7 @@
     <div class="ledger-inner">
       <span class="ledger-stamp">Rate line</span>
       <div class="ledger-rates">
-        <div class="ledger-rate"><span class="label">30-yr fixed</span><span class="val"><!--RATE:30YR-->6.74%<!--/RATE:30YR--></span></div>
+        <div class="ledger-rate"><span class="label">30-yr fixed</span><span class="val"><!--RATE:30YR-->6.83%<!--/RATE:30YR--></span></div>
         <div class="ledger-rate"><span class="label">15-yr fixed</span><span class="val"><!--RATE:15YR-->6.01%<!--/RATE:15YR--></span></div>
       </div>
       <span class="ledger-updated"><!--RATE:ASOF-->Updated Sep 3, 2026<!--/RATE:ASOF--></span>
@@ -175,15 +178,10 @@
         </div>
       </div>
       <div class="hero-card">
-        <img src="headshot.png" alt="Nathaniel Morales" class="headshot">
-        <h3>Nathaniel Morales</h3>
-        <p>Realtor® · Dallas–Fort Worth</p>
-        <div class="hero-stats">
-          <div class="hero-stat"><div class="n">95%</div><div class="l">Of homes sold</div></div>
-          <div class="hero-stat"><div class="n">98.2%</div><div class="l">Of asking price</div></div>
-          <div class="hero-stat"><div class="n">16</div><div class="l">Median days on market</div></div>
-        </div>
-        <img src="lra-logo.png" alt="Local Realty Agency" class="brokerage-logo">
+        <div class="hero-post-tag">Latest from the journal · Jul 18</div>
+        <h3>What rising rates mean for Collin County buyers</h3>
+        <p>A quick read on how the current rate environment is shaping offers north of Dallas.</p>
+        <a href="#blog" class="hero-post-link">Read the post →</a>
       </div>
     </div>
   </div>
@@ -234,7 +232,6 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="tag">Twice a week</div>
           <h2>From the journal</h2>
         </div>
         <a href="#">Read all posts</a>
