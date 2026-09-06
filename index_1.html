@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nathaniel Morales | DFW Real Estate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3EFE3;
+    --paper-dim:#EAE3D2;
+    --navy:#152538;
+    --navy-deep:#0E1A28;
+    --brass:#B8874A;
+    --brass-light:#D3AC77;
+    --ink:#1E1B16;
+    --ink-soft:#5A564C;
+    --sage:#5C7A5E;
+    --rule:rgba(30,27,22,0.15);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Sans 3', sans-serif;
+    line-height:1.5;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+  .ledger{
+    background:var(--brass);
+    color:var(--navy-deep);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    border-bottom:1px solid rgba(14,26,40,0.25);
+  }
+  .ledger-inner{
+    max-width:1080px;margin:0 auto;padding:9px 32px;
+    display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+  }
+  .ledger-stamp{
+    font-weight:500;letter-spacing:0.06em;
+    border:1px solid rgba(14,26,40,0.4);
+    padding:2px 8px;border-radius:2px;
+    font-size:11px;text-transform:uppercase;
+  }
+  .ledger-rates{display:flex;gap:24px;flex-wrap:wrap;}
+  .ledger-rate{display:flex;align-items:baseline;gap:6px;}
+  .ledger-rate .label{opacity:0.75;}
+  .ledger-rate .val{font-weight:500;}
+  .delta-down{color:#2E5A32;}
+  .delta-up{color:#7A2E22;}
+  .ledger-updated{margin-left:auto;opacity:0.7;font-size:11px;}
+  .ledger-source{
+    background:var(--navy-deep);color:rgba(243,239,227,0.55);
+    font-family:'IBM Plex Mono', monospace;font-size:11px;
+    text-align:right;
+  }
+  .ledger-source .wrap{padding:4px 32px;}
+  .ledger-source a{color:var(--brass-light);border-bottom:1px solid rgba(211,172,119,0.4);}
+  .ledger-source a:hover{border-bottom-color:var(--brass-light);}
+
+  nav{background:var(--paper);border-bottom:1px solid var(--rule);}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:20px;padding-bottom:20px;}
+  .brand{font-family:'Fraunces', serif;font-size:21px;font-weight:600;letter-spacing:0.01em;}
+  .brand span{color:var(--brass);}
+  .brand-block{display:flex;flex-direction:column;gap:2px;}
+  .brokerage-tag{font-family:'IBM Plex Mono', monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-soft);}
+  .navlinks{display:flex;gap:36px;font-size:15px;color:var(--ink-soft);}
+  .navlinks a:hover{color:var(--ink);}
+  .navcta{font-size:14px;font-weight:500;background:var(--navy);color:var(--paper);padding:9px 18px;border-radius:2px;}
+
+  .hero{
+    background:var(--navy);
+    background-image:
+      linear-gradient(rgba(243,239,227,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(243,239,227,0.05) 1px, transparent 1px);
+    background-size:38px 38px;
+    color:var(--paper);
+    padding:88px 0 96px;
+  }
+  .hero .wrap{display:grid;grid-template-columns:1.3fr 0.9fr;gap:56px;align-items:center;}
+  .eyebrow{font-family:'IBM Plex Mono', monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--brass-light);margin-bottom:18px;}
+  h1{font-family:'Fraunces', serif;font-size:52px;font-weight:500;line-height:1.08;letter-spacing:-0.01em;}
+  h1 em{font-style:italic;color:var(--brass-light);font-weight:400;}
+  .hero p{margin-top:22px;font-size:17px;color:rgba(243,239,227,0.75);max-width:480px;}
+  .hero-ctas{display:flex;gap:14px;margin-top:32px;}
+  .btn-primary{background:var(--brass);color:var(--navy-deep);font-weight:600;font-size:15px;padding:13px 24px;border-radius:2px;}
+  .btn-ghost{border:1px solid rgba(243,239,227,0.35);color:var(--paper);font-size:15px;padding:13px 24px;border-radius:2px;}
+  .hero-card{background:var(--navy-deep);border:1px solid rgba(243,239,227,0.14);border-radius:3px;padding:26px;}
+  .headshot{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--brass);margin-bottom:16px;}
+  .brokerage-logo{height:20px;margin-top:14px;opacity:0.9;}
+  .hero-card h3{font-family:'Fraunces', serif;font-size:19px;font-weight:500;}
+  .hero-card p{color:rgba(243,239,227,0.65);font-size:14px;margin-top:6px;}
+  .hero-stats{display:flex;gap:22px;margin-top:20px;border-top:1px solid rgba(243,239,227,0.14);padding-top:18px;}
+  .hero-stat .n{font-family:'IBM Plex Mono', monospace;font-size:18px;color:var(--brass-light);}
+  .hero-stat .l{font-size:11px;color:rgba(243,239,227,0.55);margin-top:2px;}
+
+  section{padding:76px 0;}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:38px;border-bottom:1px solid var(--rule);padding-bottom:20px;}
+  .section-head .tag{font-family:'IBM Plex Mono', monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);}
+  .section-head h2{font-family:'Fraunces', serif;font-size:30px;font-weight:500;margin-top:8px;}
+  .section-head a{font-size:14px;color:var(--navy);border-bottom:1px solid var(--brass);}
+
+  .listings{display:grid;grid-template-columns:repeat(3, 1fr);gap:24px;}
+  .listing-card{background:#fff;border:1px solid var(--rule);border-radius:3px;overflow:hidden;}
+  .listing-photo{height:150px;background:var(--paper-dim);display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:12px;font-family:'IBM Plex Mono', monospace;border-bottom:1px solid var(--rule);}
+  .listing-body{padding:18px;}
+  .listing-status{display:inline-block;font-family:'IBM Plex Mono', monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;background:rgba(92,122,94,0.12);color:var(--sage);padding:3px 8px;border-radius:2px;margin-bottom:12px;}
+  .listing-price{font-family:'Fraunces', serif;font-size:23px;font-weight:600;}
+  .listing-addr{font-size:14px;color:var(--ink-soft);margin-top:4px;}
+  .listing-specs{display:flex;gap:14px;margin-top:14px;padding-top:14px;border-top:1px solid var(--rule);font-family:'IBM Plex Mono', monospace;font-size:12px;color:var(--ink-soft);}
+  .idx-note{margin-top:20px;font-size:13px;color:var(--ink-soft);font-style:italic;}
+
+  .blog{background:var(--paper-dim);}
+  .blog-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:24px;}
+  .blog-card{background:var(--paper);border:1px solid var(--rule);padding:22px;border-radius:3px;}
+  .blog-date{font-family:'IBM Plex Mono', monospace;font-size:11px;color:var(--sage);letter-spacing:0.06em;text-transform:uppercase;}
+  .blog-card h3{font-family:'Fraunces', serif;font-size:18px;font-weight:500;margin-top:10px;line-height:1.3;}
+  .blog-card p{font-size:14px;color:var(--ink-soft);margin-top:8px;}
+
+  footer{background:var(--navy-deep);color:rgba(243,239,227,0.6);padding:44px 0;font-size:13px;}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  footer .brand{color:var(--paper);font-size:17px;}
+
+  @media (max-width:860px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .listings, .blog-grid{grid-template-columns:1fr;}
+    h1{font-size:38px;}
+    .navlinks{display:none;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="ledger">
+    <div class="ledger-inner">
+      <span class="ledger-stamp">Rate line</span>
+      <div class="ledger-rates">
+        <div class="ledger-rate"><span class="label">30-yr fixed</span><span class="val">6.42%</span><span class="delta-down">▼0.03</span></div>
+        <div class="ledger-rate"><span class="label">15-yr fixed</span><span class="val">5.78%</span><span class="delta-down">▼0.02</span></div>
+        <div class="ledger-rate"><span class="label">7/6 ARM</span><span class="val">6.10%</span><span class="delta-up">▲0.01</span></div>
+      </div>
+      <span class="ledger-updated">Example data · live feed connects here</span>
+    </div>
+  </div>
+  <div class="ledger-source">
+    <div class="wrap">Rates via <a href="https://www.mortgagenewsdaily.com/mortgage-rates" target="_blank" rel="noopener">Mortgage News Daily</a>, updated daily · placeholder source, swap for your provider of choice</div>
+  </div>
+
+  <nav>
+    <div class="wrap">
+      <div class="brand-block">
+        <div class="brand">Nathaniel <span>Morales</span></div>
+        <span class="brokerage-tag">Local Realty Agency</span>
+      </div>
+      <div class="navlinks">
+        <a href="#listings">Listings</a>
+        <a href="#blog">Journal</a>
+        <a href="#">Buyers</a>
+        <a href="#">Sellers</a>
+      </div>
+      <a href="#" class="navcta">Get in touch</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Dallas – Fort Worth</div>
+        <h1>Homes across DFW,<br><em>read like a title deed.</em></h1>
+        <p>Straightforward guidance for buying and selling across Dallas–Fort Worth.</p>
+        <div class="hero-ctas">
+          <a href="#listings" class="btn-primary">View current listings</a>
+          <a href="#" class="btn-ghost">Book a consultation</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="headshot.png" alt="Nathaniel Morales" class="headshot">
+        <h3>Nathaniel Morales</h3>
+        <p>Realtor® · Dallas–Fort Worth</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="n">95%</div><div class="l">Of homes sold</div></div>
+          <div class="hero-stat"><div class="n">98.2%</div><div class="l">Of asking price</div></div>
+          <div class="hero-stat"><div class="n">16</div><div class="l">Median days on market</div></div>
+        </div>
+        <img src="lra-logo.png" alt="Local Realty Agency" class="brokerage-logo">
+      </div>
+    </div>
+  </div>
+
+  <section id="listings">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="tag">Active on the market</div>
+          <h2>Featured DFW listings</h2>
+        </div>
+        <a href="#">View all listings</a>
+      </div>
+      <div class="listings">
+        <div class="listing-card">
+          <div class="listing-photo">Property photo</div>
+          <div class="listing-body">
+            <span class="listing-status">Active</span>
+            <div class="listing-price">$489,000</div>
+            <div class="listing-addr">2114 Live Oak St, Plano, TX</div>
+            <div class="listing-specs"><span>4 bd</span><span>3 ba</span><span>2,610 sqft</span></div>
+          </div>
+        </div>
+        <div class="listing-card">
+          <div class="listing-photo">Property photo</div>
+          <div class="listing-body">
+            <span class="listing-status">Active</span>
+            <div class="listing-price">$362,500</div>
+            <div class="listing-addr">908 Bluebonnet Ln, Frisco, TX</div>
+            <div class="listing-specs"><span>3 bd</span><span>2 ba</span><span>1,940 sqft</span></div>
+          </div>
+        </div>
+        <div class="listing-card">
+          <div class="listing-photo">Property photo</div>
+          <div class="listing-body">
+            <span class="listing-status">New</span>
+            <div class="listing-price">$715,000</div>
+            <div class="listing-addr">44 Cedar Ridge Ct, Southlake, TX</div>
+            <div class="listing-specs"><span>5 bd</span><span>4 ba</span><span>3,880 sqft</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="idx-note">These three cards are placeholders — once your IDX provider is connected, live NTREIS/MLS listings will populate this grid automatically.</p>
+    </div>
+  </section>
+
+  <section class="blog" id="blog">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="tag">Twice a week</div>
+          <h2>From the journal</h2>
+        </div>
+        <a href="#">Read all posts</a>
+      </div>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-date">Jul 18</div>
+          <h3>What rising rates mean for Collin County buyers</h3>
+          <p>A quick read on how the current rate environment is shaping offers north of Dallas.</p>
+        </div>
+        <div class="blog-card">
+          <div class="blog-date">Jul 15</div>
+          <h3>Frisco vs. Prosper: comparing school zones</h3>
+          <p>A side-by-side look for families weighing these two fast-growing suburbs.</p>
+        </div>
+        <div class="blog-card">
+          <div class="blog-date">Jul 11</div>
+          <h3>Staging a home in under a week</h3>
+          <p>Low-cost fixes that make the biggest difference before your first showing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="brand">Nathaniel Morales</div>
+      <div>Dallas–Fort Worth, TX · licensed Texas real estate agent</div>
+    </div>
+  </footer>
+
+</body>
+</html>
