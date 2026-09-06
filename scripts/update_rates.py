@@ -27,8 +27,22 @@ INDEX_HTML = "index.html"
 
 def fetch_latest(series_id):
     url = f"https://fred.stlouisfed.org/data/{series_id}.txt"
-    with urllib.request.urlopen(url, timeout=30) as resp:
-        text = resp.read().decode("utf-8")
+    req = urllib.request.Request(
+        url,
+        headers={
+            # FRED serves a different (non-data) response to generic
+            # scripted user agents; a normal browser-looking UA gets the
+            # plain-text data file.
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/124.0.0.0 Safari/537.36"
+            ),
+            "Accept": "text/plain,*/*;q=0.8",
+        },
+    )
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        text = resp.read().decode("utf-8", errors="replace")
 
     last_date, last_val = None, None
     for line in text.splitlines():
@@ -46,7 +60,11 @@ def fetch_latest(series_id):
         last_date, last_val = parts[0], parts[1]
 
     if last_date is None:
-        raise RuntimeError(f"Could not parse any data rows from {series_id} ({url})")
+        preview = " | ".join(text.splitlines()[:15])
+        raise RuntimeError(
+            f"Could not parse any data rows from {series_id} ({url}). "
+            f"First lines of response: {preview[:500]}"
+        )
     return last_date, last_val
 
 
