@@ -1,0 +1,32 @@
+name: Update mortgage rates
+
+on:
+  schedule:
+    # 13:30 UTC, Mon-Fri — after FRED's ~7am CDT daily Optimal Blue update
+    - cron: '30 13 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-rates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Fetch latest rates and update index.html
+        run: python3 scripts/update_rates.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "deed-and-door-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if git diff --quiet -- index.html; then
+            echo "No rate change; nothing to commit."
+          else
+            git add index.html
+            git commit -m "Update mortgage rates ($(date -u +%Y-%m-%d))"
+            git push
+          fi
