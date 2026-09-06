@@ -29,19 +29,36 @@
   a{color:inherit;text-decoration:none;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
 
-  .rate-bar{
-    background:var(--paper-dim);
-    border-bottom:1px solid var(--rule);
-    padding:16px 0;
-  }
-  .rate-bar .wrap{display:flex;justify-content:center;}
-  .rate-bar-caption{
-    text-align:center;
+  .ledger{
+    background:var(--brass);
+    color:var(--navy-deep);
     font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    color:var(--ink-soft);
-    padding:6px 0 0;
+    font-size:13px;
+    border-bottom:1px solid rgba(14,26,40,0.25);
   }
+  .ledger-inner{
+    max-width:1080px;margin:0 auto;padding:9px 32px;
+    display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+  }
+  .ledger-stamp{
+    font-weight:500;letter-spacing:0.06em;
+    border:1px solid rgba(14,26,40,0.4);
+    padding:2px 8px;border-radius:2px;
+    font-size:11px;text-transform:uppercase;
+  }
+  .ledger-rates{display:flex;gap:24px;flex-wrap:wrap;}
+  .ledger-rate{display:flex;align-items:baseline;gap:6px;}
+  .ledger-rate .label{opacity:0.75;}
+  .ledger-rate .val{font-weight:500;}
+  .ledger-updated{margin-left:auto;opacity:0.7;font-size:11px;}
+  .ledger-source{
+    background:var(--navy-deep);color:rgba(243,239,227,0.55);
+    font-family:'IBM Plex Mono', monospace;font-size:11px;
+    text-align:right;
+  }
+  .ledger-source .wrap{padding:4px 32px;}
+  .ledger-source a{color:var(--brass-light);border-bottom:1px solid rgba(211,172,119,0.4);}
+  .ledger-source a:hover{border-bottom-color:var(--brass-light);}
 
   nav{background:var(--paper);border-bottom:1px solid var(--rule);}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:20px;padding-bottom:20px;}
@@ -116,15 +133,18 @@
 </head>
 <body>
 
-  <div class="rate-bar">
-    <div class="wrap">
-      <div class="mnd-rates-widget" style="width: 215px; height: 185px; font-size: 12px; ">
-        <div class="w-header" style="text-align: center; padding:4px 0;background-color: #152538; color: #FFFFFF;"> <a href="https://www.mortgagenewsdaily.com/mortgage-rates" target="_blank" style="color: #FFFFFF;text-decoration:none;">Home Loan Rates</a></div>
-        <iframe src="//widgets.mortgagenewsdaily.com/widget/f/rates?t=small&sc=false&c=152538&u=&cbu=&w=213&h=135" width="215" height="135" frameborder="0" scrolling="no" style="border: solid 1px #152538; border-width: 0 1px;box-sizing:border-box;width:215px;height:135px;display:block;"></iframe>
-        <div class="w-footer" style="text-align: center; padding:4px 0;background-color: #152538; color: #FFFFFF;">View More <a href="https://www.mortgagenewsdaily.com/mortgage-rates" target="_blank" style="color: #FFFFFF;text-decoration:none;">Mortgage Rates</a></div>
+  <div class="ledger">
+    <div class="ledger-inner">
+      <span class="ledger-stamp">Rate line</span>
+      <div class="ledger-rates">
+        <div class="ledger-rate"><span class="label">30-yr fixed</span><span class="val"><!--RATE:30YR-->6.83%<!--/RATE:30YR--></span></div>
+        <div class="ledger-rate"><span class="label">15-yr fixed</span><span class="val"><!--RATE:15YR-->6.01%<!--/RATE:15YR--></span></div>
       </div>
+      <span class="ledger-updated"><!--RATE:ASOF-->Updated Sep 3, 2026<!--/RATE:ASOF--></span>
     </div>
-    <p class="rate-bar-caption">Rates via Mortgage News Daily, updated daily</p>
+  </div>
+  <div class="ledger-source">
+    <div class="wrap">Rates via <a href="https://fred.stlouisfed.org/series/OBMMIC30YF" target="_blank" rel="noopener">Optimal Blue Mortgage Market Indices</a>, updated daily on business days</div>
   </div>
 
   <nav>
