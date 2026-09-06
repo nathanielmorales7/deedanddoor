@@ -29,38 +29,19 @@
   a{color:inherit;text-decoration:none;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
 
-  .ledger{
-    background:var(--brass);
-    color:var(--navy-deep);
+  .rate-bar{
+    background:var(--paper-dim);
+    border-bottom:1px solid var(--rule);
+    padding:16px 0;
+  }
+  .rate-bar .wrap{display:flex;justify-content:center;}
+  .rate-bar-caption{
+    text-align:center;
     font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    border-bottom:1px solid rgba(14,26,40,0.25);
+    font-size:11px;
+    color:var(--ink-soft);
+    padding:6px 0 0;
   }
-  .ledger-inner{
-    max-width:1080px;margin:0 auto;padding:9px 32px;
-    display:flex;align-items:center;gap:28px;flex-wrap:wrap;
-  }
-  .ledger-stamp{
-    font-weight:500;letter-spacing:0.06em;
-    border:1px solid rgba(14,26,40,0.4);
-    padding:2px 8px;border-radius:2px;
-    font-size:11px;text-transform:uppercase;
-  }
-  .ledger-rates{display:flex;gap:24px;flex-wrap:wrap;}
-  .ledger-rate{display:flex;align-items:baseline;gap:6px;}
-  .ledger-rate .label{opacity:0.75;}
-  .ledger-rate .val{font-weight:500;}
-  .delta-down{color:#2E5A32;}
-  .delta-up{color:#7A2E22;}
-  .ledger-updated{margin-left:auto;opacity:0.7;font-size:11px;}
-  .ledger-source{
-    background:var(--navy-deep);color:rgba(243,239,227,0.55);
-    font-family:'IBM Plex Mono', monospace;font-size:11px;
-    text-align:right;
-  }
-  .ledger-source .wrap{padding:4px 32px;}
-  .ledger-source a{color:var(--brass-light);border-bottom:1px solid rgba(211,172,119,0.4);}
-  .ledger-source a:hover{border-bottom-color:var(--brass-light);}
 
   nav{background:var(--paper);border-bottom:1px solid var(--rule);}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:20px;padding-bottom:20px;}
@@ -135,19 +116,15 @@
 </head>
 <body>
 
-  <div class="ledger">
-    <div class="ledger-inner">
-      <span class="ledger-stamp">Rate line</span>
-      <div class="ledger-rates">
-        <div class="ledger-rate"><span class="label">30-yr fixed</span><span class="val">6.42%</span><span class="delta-down">▼0.03</span></div>
-        <div class="ledger-rate"><span class="label">15-yr fixed</span><span class="val">5.78%</span><span class="delta-down">▼0.02</span></div>
-        <div class="ledger-rate"><span class="label">7/6 ARM</span><span class="val">6.10%</span><span class="delta-up">▲0.01</span></div>
+  <div class="rate-bar">
+    <div class="wrap">
+      <div class="mnd-rates-widget" style="width: 650px; height: 340px; font-size: 12px; ">
+        <div class="w-header" style="text-align: center; padding:4px 0;background-color: #152538; color: #FFFFFF;"> <a href="https://www.mortgagenewsdaily.com/mortgage-rates" target="_blank" style="color: #FFFFFF;text-decoration:none;">Today's Mortgage Rates</a></div>
+        <iframe src="//widgets.mortgagenewsdaily.com/widget/f/rates?t=large&sn=false&c=152538&u=&cbu=&w=648&h=290" width="650" height="290" frameborder="0" scrolling="no" style="border: solid 1px #152538; border-width: 0 1px;box-sizing:border-box;width:650px;height:290px;display:block;"></iframe>
+        <div class="w-footer" style="text-align: center; padding:4px 0;background-color: #152538; color: #FFFFFF;">View More <a href="https://www.mortgagenewsdaily.com/mortgage-rates" target="_blank" style="color: #FFFFFF;text-decoration:none;">Refinance Rates</a></div>
       </div>
-      <span class="ledger-updated">Example data · live feed connects here</span>
     </div>
-  </div>
-  <div class="ledger-source">
-    <div class="wrap">Rates via <a href="https://www.mortgagenewsdaily.com/mortgage-rates" target="_blank" rel="noopener">Mortgage News Daily</a>, updated daily · placeholder source, swap for your provider of choice</div>
+    <p class="rate-bar-caption">Live rates via Mortgage News Daily, updated daily</p>
   </div>
 
   <nav>
