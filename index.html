@@ -123,8 +123,13 @@
   .blog-card p{font-size:14px;color:var(--ink-soft);margin-top:8px;}
 
   footer{background:var(--navy-deep);color:rgba(243,239,227,0.6);padding:44px 0;font-size:13px;}
-  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  footer .wrap{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;}
   footer .brand{color:var(--paper);font-size:17px;}
+  footer .footer-agency{margin-top:2px;}
+  footer .footer-right{text-align:right;}
+  footer .footer-links{margin-top:8px;display:flex;gap:14px;justify-content:flex-end;flex-wrap:wrap;}
+  footer .footer-links a{color:var(--brass-light);border-bottom:1px solid rgba(211,172,119,0.4);}
+  footer .footer-links a:hover{border-bottom-color:var(--brass-light);}
 
   @media (max-width:860px){
     .hero .wrap{grid-template-columns:1fr;}
@@ -258,8 +263,17 @@
 
   <footer>
     <div class="wrap">
-      <div class="brand">Nathaniel Morales</div>
-      <div>Dallas–Fort Worth, TX · licensed Texas real estate agent</div>
+      <div>
+        <div class="brand">Nathaniel Morales</div>
+        <div class="footer-agency">Local Realty Agency</div>
+      </div>
+      <div class="footer-right">
+        <div>Dallas–Fort Worth, TX · licensed Texas real estate agent</div>
+        <div class="footer-links">
+          <a href="#">Information about Brokerage Services</a>
+          <a href="#">Consumer Protection Notice</a>
+        </div>
+      </div>
     </div>
   </footer>
 
