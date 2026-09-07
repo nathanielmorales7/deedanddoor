@@ -161,6 +161,44 @@ footer .footer-links a:hover{border-bottom-color:var(--brass-light);}
 .idx-frame-wrap iframe{width:100%;height:100%;display:block;border:0;}
 .idx-frame-wrap.compact{height:700px;}
 
+.navdrop{position:relative;}
+.navdrop-trigger{display:inline-flex;align-items:center;gap:5px;cursor:pointer;background:none;border:none;font:inherit;color:inherit;padding:0;}
+.navlinks .navdrop-trigger{font-size:15px;color:var(--ink-soft);}
+.navlinks .navdrop-trigger:hover{color:var(--ink);}
+.navdrop-trigger::after{content:'';width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-3px;}
+.navdrop-menu{display:none;position:absolute;top:100%;left:0;margin-top:18px;background:#fff;border:1px solid var(--rule);border-radius:3px;box-shadow:0 14px 28px rgba(30,27,22,0.14);min-width:230px;padding:6px;z-index:30;}
+.navdrop:hover .navdrop-menu,.navdrop:focus-within .navdrop-menu{display:block;}
+.navdrop-menu a{display:block;padding:11px 12px;font-size:14px;color:var(--ink-soft);border-radius:2px;}
+.navdrop-menu a:hover{background:var(--paper-dim);color:var(--ink);}
+
+.steps{margin-top:8px;}
+.step{display:grid;grid-template-columns:40px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--rule);}
+.step:first-child{border-top:1px solid var(--rule);}
+.step-num{font-family:'IBM Plex Mono', monospace;font-size:13px;color:var(--brass);border:1px solid var(--brass);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step h3{font-family:'Fraunces', serif;font-size:18px;font-weight:500;margin-bottom:6px;}
+.step p{font-size:14px;color:var(--ink-soft);}
+
+.guide-item{border-bottom:1px solid var(--rule);}
+.guide-item:first-child{border-top:1px solid var(--rule);}
+.guide-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;background:none;border:none;text-align:left;font:inherit;font-family:'Fraunces', serif;font-size:19px;font-weight:500;color:var(--ink);cursor:pointer;}
+.guide-q::after{content:'+';font-family:'Source Sans 3', sans-serif;font-size:22px;font-weight:400;color:var(--brass);flex-shrink:0;transition:transform 0.2s ease;}
+.guide-item.open .guide-q::after{transform:rotate(45deg);}
+.guide-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease;}
+.guide-item.open .guide-a{max-height:1400px;}
+.guide-a-inner{padding:0 0 24px;font-size:15px;color:var(--ink-soft);line-height:1.65;}
+.guide-a-inner p{margin-bottom:12px;}
+.guide-a-inner p:last-child{margin-bottom:0;}
+.guide-a-inner ul,.guide-a-inner ol{margin:0 0 12px 20px;}
+.guide-a-inner li{margin-bottom:6px;}
+
+.stat-row{display:flex;border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin-top:32px;background:#fff;}
+.stat-tile{flex:1;text-align:center;padding:26px 16px;border-right:1px solid var(--rule);}
+.stat-tile:last-child{border-right:none;}
+.stat-tile .n{font-family:'Fraunces', serif;font-size:32px;font-weight:600;color:var(--navy);}
+.stat-tile .l{font-size:11px;color:var(--ink-soft);margin-top:6px;font-family:'IBM Plex Mono', monospace;letter-spacing:0.04em;text-transform:uppercase;}
+
+.wishlist-cta .valuation-disclaimer{margin:20px auto 0;max-width:560px;font-size:13px;color:rgba(243,239,227,0.55);border-top:1px solid rgba(243,239,227,0.15);padding-top:18px;}
+
 @media (max-width:860px){
   .hero .wrap{grid-template-columns:1fr;}
   .listings, .blog-grid{grid-template-columns:1fr;}
@@ -169,4 +207,13 @@ footer .footer-links a:hover{border-bottom-color:var(--brass-light);}
   .navtoggle{display:flex;}
   .idx-frame-wrap{height:900px;}
   .idx-frame-wrap.compact{height:600px;}
+  .navdrop{position:static;}
+  .navdrop-menu{position:static;display:none;box-shadow:none;border:none;background:none;margin:0;padding:0 0 4px 16px;min-width:0;}
+  .navdrop.mobile-open .navdrop-menu{display:block;}
+  .navdrop-trigger{width:100%;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--rule);color:var(--ink-soft);font-size:15px;}
+  .navmobile .navdrop-menu a{border-bottom:1px solid var(--rule);padding:12px 0;}
+  .step{grid-template-columns:32px 1fr;}
+  .stat-row{flex-direction:column;}
+  .stat-tile{border-right:none;border-bottom:1px solid var(--rule);}
+  .stat-tile:last-child{border-bottom:none;}
 }
