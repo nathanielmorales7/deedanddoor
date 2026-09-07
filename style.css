@@ -135,6 +135,9 @@ footer .footer-agency-logo{
   background-position:left center;
 }
 footer .footer-right{text-align:right;}
+footer .footer-contact{margin-bottom:8px;font-size:14px;color:var(--paper);}
+footer .footer-contact a{color:var(--brass-light);text-decoration:none;}
+footer .footer-contact a:hover{text-decoration:underline;}
 footer .footer-links{margin-top:8px;display:flex;gap:14px;justify-content:flex-end;flex-wrap:wrap;}
 footer .footer-links a{color:var(--brass-light);border-bottom:1px solid rgba(211,172,119,0.4);}
 footer .footer-links a:hover{border-bottom-color:var(--brass-light);}
