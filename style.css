@@ -137,9 +137,16 @@ footer .footer-links a:hover{border-bottom-color:var(--brass-light);}
 .coming-soon p{margin:18px auto 0;max-width:520px;font-size:16px;color:var(--ink-soft);}
 .coming-soon .btn-primary{display:inline-block;margin-top:28px;}
 
+.idx-page .tag{font-family:'IBM Plex Mono', monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);}
+.idx-page h1{margin-top:12px;font-size:38px;}
+.idx-page p{margin:18px 0 0;max-width:560px;font-size:16px;color:var(--ink-soft);}
+.idx-frame-wrap{margin-top:32px;border:1px solid var(--rule);border-radius:3px;overflow:hidden;height:1400px;background:#fff;}
+.idx-frame-wrap iframe{width:100%;height:100%;display:block;border:0;}
+
 @media (max-width:860px){
   .hero .wrap{grid-template-columns:1fr;}
   .listings, .blog-grid{grid-template-columns:1fr;}
   h1{font-size:38px;}
   .navlinks{display:none;}
+  .idx-frame-wrap{height:900px;}
 }
