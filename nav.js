@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   menu.addEventListener('click', function (e) {
+    var trigger = e.target.closest('.navdrop-trigger');
+    if (trigger) {
+      trigger.parentElement.classList.toggle('mobile-open');
+      return;
+    }
     if (e.target.tagName === 'A') {
       menu.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
