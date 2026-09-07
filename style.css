@@ -60,6 +60,14 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .navlinks{display:flex;gap:36px;font-size:15px;color:var(--ink-soft);}
 .navlinks a:hover{color:var(--ink);}
 .navcta{font-size:14px;font-weight:500;background:var(--navy);color:var(--paper);padding:9px 18px;border-radius:2px;}
+.nav-actions{display:flex;align-items:center;gap:16px;}
+.navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:28px;height:28px;background:none;border:none;cursor:pointer;padding:0;}
+.navtoggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:1px;}
+.navmobile{display:none;flex-direction:column;gap:0;background:var(--paper);border-top:1px solid var(--rule);padding:8px 32px 20px;}
+.navmobile a{padding:12px 0;font-size:15px;color:var(--ink-soft);border-bottom:1px solid var(--rule);}
+.navmobile a:last-child{border-bottom:none;}
+.navmobile.open{display:flex;}
+.navmobile .navcta{display:inline-block;width:fit-content;background:var(--navy);color:var(--paper);padding:9px 18px;border-radius:2px;margin-top:10px;border-bottom:none;}
 
 .hero{
   background:var(--navy);
@@ -148,5 +156,6 @@ footer .footer-links a:hover{border-bottom-color:var(--brass-light);}
   .listings, .blog-grid{grid-template-columns:1fr;}
   h1{font-size:38px;}
   .navlinks{display:none;}
+  .navtoggle{display:flex;}
   .idx-frame-wrap{height:900px;}
 }
