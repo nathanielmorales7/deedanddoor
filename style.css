@@ -168,7 +168,7 @@ footer .footer-links a:hover{border-bottom-color:var(--brass-light);}
 .navdrop-trigger::after{content:'';width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-3px;}
 .navdrop-menu{display:none;position:absolute;top:100%;left:0;margin-top:18px;background:#fff;border:1px solid var(--rule);border-radius:3px;box-shadow:0 14px 28px rgba(30,27,22,0.14);min-width:230px;padding:6px;z-index:30;}
 .navdrop-menu::before{content:'';position:absolute;top:-18px;left:0;right:0;height:18px;}
-.navdrop:hover .navdrop-menu,.navdrop:focus-within .navdrop-menu{display:block;}
+.navdrop:hover .navdrop-menu,.navdrop:focus-within .navdrop-menu,.navdrop.hover-open .navdrop-menu{display:block;}
 .navdrop-menu a{display:block;padding:11px 12px;font-size:14px;color:var(--ink-soft);border-radius:2px;}
 .navdrop-menu a:hover{background:var(--paper-dim);color:var(--ink);}
 
