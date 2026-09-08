@@ -1,0 +1,21 @@
+title: Deed & Door
+description: "Nathaniel Morales — DFW Real Estate Journal"
+markdown: kramdown
+permalink: /journal-:title.html
+
+collections:
+  posts:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - scripts
+  - README.md
+  - .github
+  - node_modules
