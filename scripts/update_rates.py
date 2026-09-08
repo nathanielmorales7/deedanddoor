@@ -93,20 +93,21 @@ def replace_marker(html, key, new_value):
 def main():
     date30, val30 = fetch_latest(SERIES["30YR"])
     date15, val15 = fetch_latest(SERIES["15YR"])
-    as_of_date = max(date30, date15)
+    run_date = datetime.utcnow().strftime("%Y-%m-%d")
 
     with open(INDEX_HTML, "r", encoding="utf-8") as f:
         html = f.read()
 
     html = replace_marker(html, "30YR", fmt_pct(val30))
     html = replace_marker(html, "15YR", fmt_pct(val15))
-    html = replace_marker(html, "ASOF", f"Updated {fmt_date(as_of_date)}")
+    html = replace_marker(html, "ASOF", f"Last Checked {fmt_date(run_date)}")
 
     with open(INDEX_HTML, "w", encoding="utf-8") as f:
         f.write(html)
 
     print(f"30-yr fixed: {fmt_pct(val30)} (as of {date30})")
     print(f"15-yr fixed: {fmt_pct(val15)} (as of {date15})")
+    print(f"Last checked: {run_date}")
 
 
 if __name__ == "__main__":
