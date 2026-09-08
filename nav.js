@@ -24,3 +24,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.navlinks .navdrop').forEach(function (drop) {
+    var closeTimer = null;
+
+    function openDrop() {
+      clearTimeout(closeTimer);
+      drop.classList.add('hover-open');
+    }
+
+    function scheduleClose() {
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(function () {
+        drop.classList.remove('hover-open');
+      }, 400);
+    }
+
+    drop.addEventListener('mouseenter', openDrop);
+    drop.addEventListener('mouseleave', scheduleClose);
+    drop.addEventListener('focusin', openDrop);
+    drop.addEventListener('focusout', scheduleClose);
+  });
+});
