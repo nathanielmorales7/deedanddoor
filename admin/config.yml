@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: nathanielmorales7/deedanddoor
+  branch: main
+  base_url: https://deed-and-door-oauth.workers.dev
+  auth_endpoint: auth
+
+publish_mode: simple
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "Journal Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Category", name: "category", widget: "string", default: "Market Update", required: false}
+      - {label: "Read Time", name: "read_time", widget: "string", default: "4 min read", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Closing call-to-action (HTML allowed)", name: "cta", widget: "text", required: false}
