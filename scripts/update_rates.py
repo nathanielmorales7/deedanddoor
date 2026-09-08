@@ -28,6 +28,7 @@ import sys
 import urllib.parse
 import urllib.request
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 SERIES = {
     "30YR": "OBMMIC30YF",
@@ -82,6 +83,13 @@ def fmt_date(date_str):
     # Cross-platform day-of-month without leading zero
     return f"{d.strftime('%b')} {d.day}, {d.year}"
 
+def fmt_checked(dt):
+    # e.g. "Sep 8, 2026 at 1:04 PM CDT" — cross-platform hour without leading zero
+    date_part = f"{dt.strftime('%b')} {dt.day}, {dt.year}"
+    hour = dt.strftime('%I').lstrip('0') or '12'
+    time_part = f"{hour}:{dt.strftime('%M %p %Z')}"
+    return f"{date_part} at {time_part}"
+
 
 def replace_marker(html, key, new_value):
     pattern = re.compile(rf"(<!--RATE:{key}-->)(.*?)(<!--/RATE:{key}-->)", re.DOTALL)
@@ -93,21 +101,21 @@ def replace_marker(html, key, new_value):
 def main():
     date30, val30 = fetch_latest(SERIES["30YR"])
     date15, val15 = fetch_latest(SERIES["15YR"])
-    run_date = datetime.utcnow().strftime("%Y-%m-%d")
+    run_dt = datetime.now(ZoneInfo("America/Chicago"))
 
     with open(INDEX_HTML, "r", encoding="utf-8") as f:
         html = f.read()
 
     html = replace_marker(html, "30YR", fmt_pct(val30))
     html = replace_marker(html, "15YR", fmt_pct(val15))
-    html = replace_marker(html, "ASOF", f"Last Checked {fmt_date(run_date)}")
+    html = replace_marker(html, "ASOF", f"Last Checked {fmt_checked(run_dt)}")
 
     with open(INDEX_HTML, "w", encoding="utf-8") as f:
         f.write(html)
 
     print(f"30-yr fixed: {fmt_pct(val30)} (as of {date30})")
     print(f"15-yr fixed: {fmt_pct(val15)} (as of {date15})")
-    print(f"Last checked: {run_date}")
+    print(f"Last checked: {fmt_checked(run_dt)}")
 
 
 if __name__ == "__main__":
