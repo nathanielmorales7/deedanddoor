@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script src="nav.js" defer></script>
+<script src="accordion.js" defer></script>
 </head>
 <body>
 
@@ -46,14 +47,114 @@
     <div class="navmobile"></div>
   </nav>
 
-  <div class="coming-soon">
+  <section class="idx-page">
     <div class="wrap">
       <div class="tag">For investors &amp; flippers</div>
-      <h1>A dedicated investor guide is on the way</h1>
-      <p>ARV and comps, rehab budgeting, financing options like hard money and DSCR loans, and off-market deal flow — built specifically for DFW investors and flippers. In the meantime, reach out directly and I'll help you find the right deal.</p>
+      <h1>Investing and Flipping in DFW</h1>
+      <p>Dallas–Fort Worth has been a magnet for investors for years, which is exactly why the easy deals get harder to find every year too. The math that actually protects you — real comps, a rehab budget with room for the surprise nobody saw coming, financing that fits how long you're actually planning to hold — is the same whether you're buying your first flip or your fifteenth rental. Here's the rundown.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="tag">The rundown</div>
+          <h2>What every DFW investor deal comes down to</h2>
+          <p style="font-size:12px;color:var(--ink-soft);margin-top:10px;max-width:560px;">This information is general and educational — it is not financial, tax, or legal advice. Every deal, lender, and tax situation is different; talk to your lender, CPA, and (for anything contract-related) a licensed Texas real estate attorney before you rely on it.</p>
+        </div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">ARV and comps: the number the whole deal rests on</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>After-repair value (ARV) is your estimate of what the property will sell for once the work is done — and it's the single most important number in the deal, because your max offer, your rehab budget, and your profit all get built backward from it. Pull comps the way an appraiser would: recently sold (not just listed) homes, same subdivision or a genuinely comparable one, similar square footage and bed/bath count, and — this is the part people skip — a similar finish level to what you're planning to deliver, not what's currently sitting there half-finished.</p>
+          <p>Two comps that "sort of" match aren't a comp set. Three to five tight, recent, truly similar sales beat a dozen loose ones, and pulling them off the MLS (not a public estimate site) gets you the closed price, not a guess.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Rehab budgeting: what actually eats your margin</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>The line items everyone budgets for — kitchen, bathrooms, flooring, paint — are rarely what blows a rehab budget. It's the stuff behind the walls: foundation movement (common enough in North Texas clay soil that it's worth a specific look), old galvanized plumbing, an undersized electrical panel, or a roof that looked fine from the driveway. Get a real inspection before you finalize your offer, not after, and build in a contingency — most experienced flippers budget somewhere around 10-15% of the rehab estimate for the unknowns, because there are always unknowns.</p>
+          <p>Permits are the other place people cut corners they shouldn't. Unpermitted electrical or structural work can come back to bite you at resale, when the buyer's inspector or appraiser flags it — sometimes years after you've moved on to the next deal.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">The 70% rule — a starting point, not a formula</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>The classic flipper shorthand: don't pay more than 70% of ARV, minus repair costs. So a home worth $300,000 after repairs, needing $40,000 of work, tops out around a $170,000 purchase price under that rule. It's a useful gut-check for a first pass, especially when you're screening a lot of deals quickly.</p>
+          <p>It's also just a rule of thumb, not a law of physics — it doesn't account for your actual holding costs, how competitive the specific neighborhood is, or how you're financing the deal. Use it to filter, then run the real numbers (purchase, rehab, holding costs, selling costs, financing costs) before you actually write an offer.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Financing: hard money, DSCR loans, and conventional</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>Most flips get financed with short-term hard money — faster to close, asset-based underwriting (they care more about the deal than your W-2), but noticeably higher rates and points than a conventional mortgage, plus origination fees. It's built for speed and a short hold, not for keeping around.</p>
+          <p>For buy-and-hold rentals, a DSCR loan (debt-service coverage ratio) qualifies you off the property's rental income rather than your personal income — useful once you already own a few properties and your personal debt-to-income ratio gets tight. A conventional investment-property mortgage is usually the cheapest option if you qualify for one, but expect a larger down payment than an owner-occupied loan and rate add-ons for it being an investment property. Which one makes sense depends entirely on your hold period and your own financial picture — worth a real conversation with a lender who works with investors specifically, not just whoever did your last refinance.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Off-market deal flow: where the real inventory comes from</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>By the time a deal is polished, photographed, and live on the MLS with multiple showings booked, the easy margin is usually already gone — everyone sees the same listing at the same time. Real off-market flow tends to come from a few consistent sources: expired and withdrawn listings, probate and estate sales, pre-foreclosure situations, direct outreach to absentee owners, and — often the most reliable one — a network of agents, wholesalers, and other investors who bring you a deal before it's public.</p>
+          <p>This is a big part of where I can actually help: I see expired listings, price changes, and off-market conversations across DFW that never make it to a portal site, and I can flag ones that fit what you're looking for before they're competitive.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Holding costs: the clock that never stops running</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>Every month a property sits — during rehab, during the sale, waiting on a tenant — costs real money: the loan's interest (often the biggest piece on a hard money loan), property taxes, insurance, utilities, and HOA dues if applicable. It's easy to model a 3-month rehab timeline on a spreadsheet and much harder to actually hit it once a permit gets delayed or a contractor's crew doesn't show for two weeks.</p>
+          <p>Padding your timeline estimate — and your holding-cost budget along with it — is one of the simplest ways to protect your margin on paper before you're protecting it for real.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Exit strategy: flip, wholesale, or hold as a rental</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>Not every deal that pencils as a flip is actually your best move on that property — and it's worth deciding your exit before you close, not after. A flip converts your work into cash fastest but pays short-term capital gains-style tax treatment if held under a year and exposes you to market timing risk on the resale. Wholesaling (assigning the contract to another investor before you ever close) needs the least capital but pays the smallest margin. Holding as a rental trades a quick payday for ongoing cash flow, appreciation, and depreciation — but ties up your capital and turns you into a landlord (see the Landlords guide for that side of it).</p>
+          <p>Some of the best deals I've seen investors pass on were ones they only evaluated as a flip — the numbers didn't work for a 4-month turnaround, but would have worked well as a long-term hold.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Taxes: capital gains, depreciation, and 1031 exchanges</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>Flip profits held under a year are generally taxed as ordinary income (and can trigger self-employment tax if you're doing this as a business rather than a one-off), while longer holds may qualify for more favorable long-term capital gains treatment — the exact line depends on your specific facts. Rental properties get more favorable tax treatment through depreciation, which can offset rental income on paper even while the property cash-flows positively in real life.</p>
+          <p>A 1031 exchange lets you defer capital gains tax by rolling proceeds from a sold investment property into a new one, under strict timelines and rules (45 days to identify a replacement, 180 to close). It's a genuinely powerful tool for investors scaling up, and it is also easy to disqualify yourself from by missing a deadline or a technical requirement — this is squarely CPA-and-qualified-intermediary territory, not a DIY project.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Working with a contractor without getting burned</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>A detailed written scope of work — not a handshake and a text thread — is what keeps a rehab on budget and on schedule. Get multiple bids on any project over a few thousand dollars, check references from recent jobs (not the contractor's favorite job from three years ago), and confirm they're actually licensed and insured for the trades involved.</p>
+          <p>Structure payments around completed milestones rather than paying a large deposit up front, and put change-order terms in writing before work starts — "we'll figure it out as we go" is exactly how a rehab budget quietly doubles.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">When it's worth bringing me in</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>Some investors want a full partner on sourcing, comping, and negotiating every deal. Others just want someone to sanity-check the ARV before they commit, or a heads-up when the right off-market property surfaces. Either way works — the goal is more deals that actually pencil, not a longer conversation than you need.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="wishlist-cta">
+    <div class="wrap">
+      <div class="tag">Sourcing deals</div>
+      <h2>Want first look at off-market DFW deals?</h2>
+      <p>Tell me what you're looking for — price range, area, flip vs. hold — and I'll flag properties that fit before they're competitive.</p>
       <a href="#" class="btn-primary">Get in touch</a>
     </div>
-  </div>
+  </section>
 
   <footer>
     <div class="wrap">
