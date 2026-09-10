@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script src="nav.js" defer></script>
+<script src="accordion.js" defer></script>
 </head>
 <body>
 
@@ -46,14 +47,119 @@
     <div class="navmobile"></div>
   </nav>
 
-  <div class="coming-soon">
+  <section class="idx-page">
     <div class="wrap">
       <div class="tag">For landlords</div>
-      <h1>A dedicated landlord guide is on the way</h1>
-      <p>Buy-and-hold rental analysis, cash-flow and cap-rate basics, property management considerations, and DFW-specific landlord-tenant law — whether you own rentals already or are weighing your first one. In the meantime, reach out directly and let's talk through the numbers.</p>
+      <h1>Owning Rental Property in DFW</h1>
+      <p>Whether you're weighing your first rental or already juggling a few, the questions tend to be the same: does this property actually cash flow, what happens the day a tenant stops paying, and how much of "being a landlord" should you really be doing yourself? Here's the practical rundown — the numbers, the law, and the day-to-day.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="tag">The rundown</div>
+          <h2>What owning a DFW rental actually involves</h2>
+          <p style="font-size:12px;color:var(--ink-soft);margin-top:10px;max-width:560px;">This information is general and educational — it is not legal, tax, or financial advice. Texas landlord-tenant law has specific notice periods and procedural requirements; consult a licensed Texas attorney for anything involving an actual lease dispute, eviction, or tenant issue.</p>
+        </div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Cash flow: the number that actually matters day to day</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>Cash flow is what's left after rent collected minus every recurring cost: mortgage principal and interest, property taxes, insurance, HOA dues if any, a vacancy reserve, a maintenance reserve, and property management fees if you use one. It's easy to run the math on just the mortgage payment and call a property "cash-flowing" — the ones that actually hold up over years are underwritten against the full list.</p>
+          <p>A reasonable rule of thumb: budget 5-10% of gross rent for vacancy and another 5-10% for maintenance and capital reserves, even in a year where nothing breaks. The furnace that dies in year six doesn't care that years one through five were quiet.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Cap rate and cash-on-cash return: two different questions</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>Cap rate (net operating income divided by purchase price) answers "how does this property perform independent of financing" — useful for comparing properties or markets apples-to-apples. Cash-on-cash return (annual cash flow divided by actual cash invested) answers the question you probably care about more: "what am I actually earning on the money I put in," which changes a lot depending on your down payment and financing terms.</p>
+          <p>A property can look mediocre on cap rate and still be a strong cash-on-cash return with the right financing, or the reverse. Run both before comparing two properties against each other.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Financing a rental: what changes from an owner-occupied loan</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>Investment-property mortgages generally require a larger down payment than an owner-occupied home (often 15-25%, versus far less for a primary residence) and carry a somewhat higher interest rate, since lenders treat non-owner-occupied loans as higher risk. Once you own a few properties and your personal debt-to-income ratio gets tight, a DSCR loan — which qualifies you off the property's own rental income instead of your personal income — is worth a look; see the Investors guide for more on that.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Screening tenants: the step that prevents most future headaches</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>A consistent screening process — credit check, background check, income verification (a common guideline is gross income at least three times the rent), landlord references, and proof of employment — applied the same way to every applicant is both good practice and legal protection under fair housing law. Deciding your criteria in writing before you have an applicant in front of you keeps the process consistent and defensible.</p>
+          <p>Fair housing law prohibits discriminating based on protected characteristics (race, color, religion, sex, national origin, familial status, and disability, under federal law, with some states and cities adding more) — screening criteria should be about the ability to pay and maintain the property, applied equally to everyone who applies.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Security deposits under Texas law</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>Texas doesn't cap how much you can charge for a security deposit (unlike some states), but it does regulate what happens to it: under the Texas Property Code, a landlord generally has 30 days after the tenant moves out to return the deposit or provide an itemized list of deductions. Deductions have to be for actual damage beyond normal wear and tear — not routine wear from ordinary living.</p>
+          <p>Move-in and move-out documentation (photos, a written condition report) is what actually protects you if a deduction gets disputed later — without it, "the carpet was stained when they left" is just your word against theirs.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Lease terms worth getting right from day one</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>Beyond rent and term length, a solid lease spells out who's responsible for which repairs and utilities, the exact late-fee policy and grace period, pet policy (including any pet deposit or rent), whether subletting is allowed, and the notice period required before either side ends a month-to-month arrangement. Texas doesn't require a written lease for it to be enforceable, but an oral lease is a much harder thing to prove in a dispute — always get it in writing.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Repairs and habitability: your legal obligations as landlord</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>Texas law requires landlords to make a diligent effort to repair conditions that materially affect the physical health or safety of an ordinary tenant, once properly notified in writing. There's a specific legal process a tenant has to follow to force repairs or take other remedies if a landlord doesn't respond — which is exactly why responding promptly to a written repair request, and documenting that you did, matters both for the tenant relationship and for your own legal protection.</p>
+          <p>Routine maintenance (HVAC servicing, gutter cleaning, pest prevention) done proactively is almost always cheaper than the emergency version of the same problem six months later.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">When a tenant stops paying: the eviction process, briefly</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>In Texas, evicting a tenant requires following a specific legal process through the courts — it starts with a written notice to vacate (commonly a 3-day notice unless the lease specifies otherwise), and if the tenant doesn't leave, a formal eviction suit (forcible detainer) filed in justice court. Self-help evictions — changing the locks, shutting off utilities, removing belongings without a court order — are illegal in Texas regardless of how far behind on rent a tenant is, and can expose the landlord to real liability.</p>
+          <p>This is genuinely attorney territory the moment it becomes contested — the process has specific notice and filing requirements, and getting a step wrong can restart the clock or expose you to a counterclaim.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Self-managing vs. hiring a property manager</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>Self-managing saves the typical 8-10% of monthly rent (often plus a leasing fee) that a property manager charges, but it means you're the one fielding the midnight call about a broken water heater. It tends to work best for owners with one or two properties reasonably close to home, some DIY comfort, and the time to actually respond.</p>
+          <p>A property manager earns their fee mainly on the parts that are hardest to do well from a distance or around a full-time job: marketing and showings, tenant screening, rent collection, maintenance coordination, and staying current on landlord-tenant law changes. As a portfolio grows past a couple of doors, most owners find the time saved is worth more than the fee.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">Insurance: landlord policy, not a homeowner's policy</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>A standard homeowner's insurance policy typically excludes coverage once a property is tenant-occupied — a dedicated landlord (dwelling/DP-3) policy is built for that, covering the structure plus landlord liability, and usually costs somewhat more than a comparable homeowner's policy. It's also worth requiring tenants to carry their own renter's insurance in the lease, which covers their personal belongings and liability — something your landlord policy generally won't.</p>
+        </div></div>
+      </div>
+
+      <div class="guide-item">
+        <button type="button" class="guide-q">When it's worth talking through the numbers together</button>
+        <div class="guide-a"><div class="guide-a-inner">
+          <p>Whether you're running the numbers on a first rental, deciding whether to sell or hold a property you already own, or scaling from one door to several, it helps to have someone who sees rental comps and off-market inventory across DFW day to day. Reach out and let's talk through what actually pencils for what you're trying to do.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="wishlist-cta">
+    <div class="wrap">
+      <div class="tag">Thinking about a rental</div>
+      <h2>Let's run the numbers on a specific property</h2>
+      <p>Whether it's a property you're eyeing or one you already own, I can help you look at the real cash flow — not just the mortgage payment.</p>
       <a href="#" class="btn-primary">Get in touch</a>
     </div>
-  </div>
+  </section>
 
   <footer>
     <div class="wrap">
