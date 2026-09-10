@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nathanielmorales7.github.io/deedanddoor/sitemap.xml
