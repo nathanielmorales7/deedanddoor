@@ -2,7 +2,7 @@ backend:
   name: github
   repo: nathanielmorales7/deedanddoor
   branch: main
-  base_url: https://deed-and-door-oauth.workers.dev
+  base_url: https://deed-and-door-oauth.localrealtyagencyoftexas.workers.dev
   auth_endpoint: auth
 
 publish_mode: simple
