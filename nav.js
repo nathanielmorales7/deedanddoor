@@ -47,3 +47,31 @@ document.addEventListener('DOMContentLoaded', function () {
     drop.addEventListener('focusout', scheduleClose);
   });
 });
+
+// Lead-capture popup modal: any element with class "lead-capture-btn" opens it
+document.addEventListener('DOMContentLoaded', function () {
+  var overlay = document.getElementById('lead-modal-overlay');
+  if (!overlay) return;
+
+  document.querySelectorAll('.lead-capture-btn').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      overlay.classList.add('open');
+    });
+  });
+
+  var closeBtn = overlay.querySelector('.lead-modal-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      overlay.classList.remove('open');
+    });
+  }
+
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) overlay.classList.remove('open');
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') overlay.classList.remove('open');
+  });
+});
