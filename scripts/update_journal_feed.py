@@ -157,10 +157,34 @@ def parse_cms_post(path):
     return {"title": title, "date": date, "excerpt": excerpt, "href": href}
 
 
+def linked_flat_posts():
+    """The set of journal-*.html filenames actually linked from journal.html.
+
+    journal.html is the site's master post index and is already updated by
+    hand whenever a new flat post is published (a separate step from this
+    script). Treating it as the source of truth means a stray/duplicate
+    journal-*.html file sitting in the repo but not linked from anywhere
+    (e.g. an old draft that was renamed) can never leak onto the homepage."""
+    journal_path = os.path.join(REPO_ROOT, "journal.html")
+    if not os.path.exists(journal_path):
+        return None  # no journal.html to check against; don't filter
+    with open(journal_path, "r", encoding="utf-8") as f:
+        html = f.read()
+    return set(re.findall(r'href="(journal-[a-z0-9-]+\.html)"', html))
+
+
 def collect_posts():
     posts = []
+    valid_flat = linked_flat_posts()
 
     for path in sorted(glob.glob(os.path.join(REPO_ROOT, "journal-*.html"))):
+        if valid_flat is not None and os.path.basename(path) not in valid_flat:
+            print(
+                "  skip {}: not linked from journal.html (looks like a stray/orphaned file)".format(
+                    path
+                )
+            )
+            continue
         post = parse_flat_post(path)
         if post:
             posts.append(post)
