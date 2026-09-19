@@ -1,0 +1,35 @@
+name: Update journal feed on homepage
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'journal-*.html'
+      - '_posts/**'
+      - 'scripts/update_journal_feed.py'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-journal-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Regenerate homepage journal hero + grid
+        run: python3 scripts/update_journal_feed.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "deed-and-door-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if git diff --quiet -- index.html; then
+            echo "No journal feed change; nothing to commit."
+          else
+            git add index.html
+            git commit -m "Update homepage journal feed ($(date -u +%Y-%m-%d))"
+            git push
+          fi
