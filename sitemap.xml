@@ -1,55 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nathanielmorales7.github.io/deedanddoor/index.html</loc>
+    <loc>https://deedanddoor.com/index.html</loc>
+    <lastmod>2026-09-19</lastmod>
+  </url>
+  <url>
+    <loc>https://deedanddoor.com/buyers.html</loc>
     <lastmod>2026-09-10</lastmod>
   </url>
   <url>
-    <loc>https://nathanielmorales7.github.io/deedanddoor/buyers.html</loc>
+    <loc>https://deedanddoor.com/sellers.html</loc>
     <lastmod>2026-09-10</lastmod>
   </url>
   <url>
-    <loc>https://nathanielmorales7.github.io/deedanddoor/sellers.html</loc>
+    <loc>https://deedanddoor.com/listings.html</loc>
     <lastmod>2026-09-10</lastmod>
   </url>
   <url>
-    <loc>https://nathanielmorales7.github.io/deedanddoor/listings.html</loc>
+    <loc>https://deedanddoor.com/journal.html</loc>
+    <lastmod>2026-09-19</lastmod>
+  </url>
+  <url>
+    <loc>https://deedanddoor.com/fsbo.html</loc>
     <lastmod>2026-09-10</lastmod>
   </url>
   <url>
-    <loc>https://nathanielmorales7.github.io/deedanddoor/journal.html</loc>
+    <loc>https://deedanddoor.com/expired-listing.html</loc>
     <lastmod>2026-09-10</lastmod>
   </url>
   <url>
-    <loc>https://nathanielmorales7.github.io/deedanddoor/fsbo.html</loc>
+    <loc>https://deedanddoor.com/investors.html</loc>
     <lastmod>2026-09-10</lastmod>
   </url>
   <url>
-    <loc>https://nathanielmorales7.github.io/deedanddoor/expired-listing.html</loc>
+    <loc>https://deedanddoor.com/landlords.html</loc>
     <lastmod>2026-09-10</lastmod>
   </url>
   <url>
-    <loc>https://nathanielmorales7.github.io/deedanddoor/investors.html</loc>
+    <loc>https://deedanddoor.com/about.html</loc>
     <lastmod>2026-09-10</lastmod>
   </url>
   <url>
-    <loc>https://nathanielmorales7.github.io/deedanddoor/landlords.html</loc>
+    <loc>https://deedanddoor.com/journal-collin-county-rates.html</loc>
     <lastmod>2026-09-10</lastmod>
   </url>
   <url>
-    <loc>https://nathanielmorales7.github.io/deedanddoor/about.html</loc>
+    <loc>https://deedanddoor.com/journal-frisco-vs-prosper.html</loc>
     <lastmod>2026-09-10</lastmod>
   </url>
   <url>
-    <loc>https://nathanielmorales7.github.io/deedanddoor/journal-collin-county-rates.html</loc>
+    <loc>https://deedanddoor.com/journal-staging-a-home.html</loc>
     <lastmod>2026-09-10</lastmod>
   </url>
   <url>
-    <loc>https://nathanielmorales7.github.io/deedanddoor/journal-frisco-vs-prosper.html</loc>
+    <loc>https://deedanddoor.com/journal-dfw-inventory-loosening.html</loc>
     <lastmod>2026-09-10</lastmod>
   </url>
   <url>
-    <loc>https://nathanielmorales7.github.io/deedanddoor/journal-staging-a-home.html</loc>
+    <loc>https://deedanddoor.com/journal-mckinney-downtown.html</loc>
     <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://deedanddoor.com/journal-three-showings-three-lessons.html</loc>
+    <lastmod>2026-09-10</lastmod>
+  </url>
+  <url>
+    <loc>https://deedanddoor.com/journal-fed-rate-hike-dfw.html</loc>
+    <lastmod>2026-09-19</lastmod>
   </url>
 </urlset>
