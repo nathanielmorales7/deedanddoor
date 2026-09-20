@@ -75,3 +75,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'Escape') overlay.classList.remove('open');
   });
 });
+   // GoHighLevel External Tracking (page views + form submissions)
+   document.addEventListener('DOMContentLoaded', function () {
+     var s = document.createElement('script');
+     s.src = 'https://link.msgsndr.com/js/external-tracking.js';
+     s.setAttribute('data-tracking-id', 'tk_79a8cf7ea2f64eef89de8f5efaa0fafa');
+     document.body.appendChild(s);
+   });
