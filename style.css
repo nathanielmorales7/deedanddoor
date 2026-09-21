@@ -91,6 +91,7 @@ h1 em{font-style:italic;color:var(--brass-light);font-weight:400;}
 .hero-post-link{display:inline-block;margin-top:18px;font-family:'IBM Plex Mono', monospace;font-size:13px;color:var(--brass-light);border-bottom:1px solid rgba(211,172,119,0.4);}
 .hero-post-link:hover{border-bottom-color:var(--brass-light);}
 .headshot{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--brass);margin-bottom:16px;}
+.about-headshot{width:160px;height:160px;border:3px solid var(--brass);margin-top:24px;margin-bottom:0;}
 .brokerage-logo{height:20px;margin-top:14px;opacity:0.9;}
 .hero-card h3{font-family:'Fraunces', serif;font-size:19px;font-weight:500;}
 .hero-card p{color:rgba(243,239,227,0.65);font-size:14px;margin-top:6px;}
