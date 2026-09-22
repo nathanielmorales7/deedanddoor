@@ -126,6 +126,7 @@ section{padding:76px 0;}
 footer{background:var(--navy-deep);color:rgba(243,239,227,0.6);padding:44px 0;font-size:13px;}
 footer .wrap{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;}
 footer .brand{color:var(--paper);font-size:17px;}
+footer .footer-brand-link{display:block;text-decoration:none;color:inherit;}
 footer .footer-agency{margin-top:2px;}
 footer .footer-agency-logo{
   width:140px;
