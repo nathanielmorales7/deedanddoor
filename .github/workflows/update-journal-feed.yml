@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - 'journal.html'
       - 'journal-*.html'
       - '_posts/**'
       - 'scripts/update_journal_feed.py'
