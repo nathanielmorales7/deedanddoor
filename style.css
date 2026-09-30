@@ -219,6 +219,8 @@ footer .footer-links a:hover{border-bottom-color:var(--brass-light);}
 .article-hero-img{margin-top:32px;margin-bottom:-140px;border:1px solid var(--rule);border-radius:3px;overflow:hidden;}
 .article-hero-img img{width:100%;height:336px;object-fit:cover;display:block;}
 @media (max-width:860px){.article-hero-img img{height:192px;}}
+.article-hero-credit{padding:6px 12px;font-size:11px;color:var(--ink-soft);text-align:right;background:var(--paper-dim);border-top:1px solid var(--rule);}
+.article-hero-credit a{color:var(--ink-soft);}
 .journal-hero{padding-bottom:20px;}
 .journal-feed{padding-top:20px;}
 .article-meta{margin-top:16px;font-family:'IBM Plex Mono', monospace;font-size:13px;color:var(--ink-soft);letter-spacing:0.02em;}
