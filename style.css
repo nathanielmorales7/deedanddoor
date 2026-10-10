@@ -256,3 +256,7 @@ footer .footer-links a:hover{border-bottom-color:var(--brass-light);}
 .repair-roi-table td{color:var(--ink);}
 .repair-roi-table td:last-child,.repair-roi-table th:last-child{font-family:'IBM Plex Mono', monospace;color:var(--brass);font-weight:500;}
 @media (max-width:860px){.repair-roi-table{font-size:13px;}.repair-roi-table th,.repair-roi-table td{padding:8px 6px;}}
+
+/* Internal journal-to-journal links (added 2026-10-10, per Nate) */
+.article-body .journal-link{color:#1d4ed8;}
+.article-body .journal-link:hover{text-decoration:underline;}
