@@ -281,3 +281,14 @@ footer .footer-links a:hover{border-bottom-color:var(--brass-light);}
   .nav-actions{gap:14px;}
   .navcta{font-size:13px;padding:8px 12px;white-space:nowrap;}
 }
+
+/* Tighter homepage spacing on mobile */
+@media (max-width:860px){
+  .hero{padding:44px 0 48px;}
+  .hero .wrap{gap:32px;}
+  .hero .eyebrow{margin-bottom:14px;}
+  .hero p{margin-top:16px;}
+  .hero-ctas{margin-top:24px;}
+  .hero ~ section{padding:48px 0;}
+  .hero ~ section .section-head{margin-bottom:24px;padding-bottom:14px;}
+}
