@@ -272,3 +272,12 @@ footer .footer-links a:hover{border-bottom-color:var(--brass-light);}
   .ledger-source .wrap{padding:2px 16px;}
   .ledger-source-extra{display:none;}
 }
+
+/* Roomier header on mobile */
+@media (max-width:860px){
+  nav .wrap{padding:14px 20px;gap:12px;}
+  .brand{font-size:19px;}
+  .brokerage-tag{font-size:8.5px;letter-spacing:0.03em;white-space:nowrap;}
+  .nav-actions{gap:14px;}
+  .navcta{font-size:13px;padding:8px 12px;white-space:nowrap;}
+}
