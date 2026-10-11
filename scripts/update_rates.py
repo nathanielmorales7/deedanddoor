@@ -18,9 +18,10 @@ https://fred.stlouisfed.org/docs/api/api_key.html) stored as the repo
 secret FRED_API_KEY, passed to this script as an environment variable by
 .github/workflows/update-rates.yml.
 
-This script only rewrites index.html; it does not commit or push (the
+This script only rewrites the HTML files; it does not commit or push (the
 workflow handles that).
 """
+import glob
 import json
 import os
 import re
@@ -94,7 +95,7 @@ def fmt_checked(dt):
 def replace_marker(html, key, new_value):
     pattern = re.compile(rf"(<!--RATE:{key}-->)(.*?)(<!--/RATE:{key}-->)", re.DOTALL)
     if not pattern.search(html):
-        raise RuntimeError(f"Marker RATE:{key} not found in {INDEX_HTML}")
+        raise RuntimeError(f"Marker RATE:{key} not found")
     return pattern.sub(lambda m: m.group(1) + new_value + m.group(3), html)
 
 
@@ -103,20 +104,31 @@ def main():
     date15, val15 = fetch_latest(SERIES["15YR"])
     run_dt = datetime.now(ZoneInfo("America/Chicago"))
 
-    with open(INDEX_HTML, "r", encoding="utf-8") as f:
-        html = f.read()
+    # The rate line appears on every page (plus the Jekyll post template),
+    # so update every HTML file that carries the RATE markers.
+    candidates = sorted(glob.glob("*.html")) + ["_layouts/post.html"]
+    updated = []
+    for path in candidates:
+        if not os.path.exists(path):
+            continue
+        with open(path, "r", encoding="utf-8") as f:
+            html = f.read()
+        if "<!--RATE:30YR-->" not in html:
+            continue
+        html = replace_marker(html, "30YR", fmt_pct(val30))
+        html = replace_marker(html, "15YR", fmt_pct(val15))
+        html = replace_marker(html, "ASOF", f"Last Checked {fmt_checked(run_dt)}")
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(html)
+        updated.append(path)
 
-    html = replace_marker(html, "30YR", fmt_pct(val30))
-    html = replace_marker(html, "15YR", fmt_pct(val15))
-    html = replace_marker(html, "ASOF", f"Last Checked {fmt_checked(run_dt)}")
-
-    with open(INDEX_HTML, "w", encoding="utf-8") as f:
-        f.write(html)
+    if INDEX_HTML not in updated:
+        raise RuntimeError(f"Rate markers not found in {INDEX_HTML}")
 
     print(f"30-yr fixed: {fmt_pct(val30)} (as of {date30})")
     print(f"15-yr fixed: {fmt_pct(val15)} (as of {date15})")
     print(f"Last checked: {fmt_checked(run_dt)}")
-
+    print(f"Updated {len(updated)} files: {', '.join(updated)}")
 
 if __name__ == "__main__":
     try:
