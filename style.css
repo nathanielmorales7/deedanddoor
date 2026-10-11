@@ -260,3 +260,14 @@ footer .footer-links a:hover{border-bottom-color:var(--brass-light);}
 /* Internal journal-to-journal links (added 2026-10-10, per Nate) */
 .article-body .journal-link{color:#1d4ed8;}
 .article-body .journal-link:hover{text-decoration:underline;}
+
+/* Compact rate bar on mobile */
+@media (max-width:860px){
+  .ledger{font-size:11px;}
+  .ledger-inner{padding:6px 16px;gap:4px 12px;}
+  .ledger-stamp{font-size:9px;padding:1px 5px;}
+  .ledger-rates{gap:4px 14px;}
+  .ledger-updated{margin-left:0;width:100%;font-size:10px;}
+  .ledger-source{font-size:10px;text-align:left;}
+  .ledger-source .wrap{padding:3px 16px;}
+}
