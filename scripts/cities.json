@@ -1,20 +1,113 @@
 {
   "_comment": "One entry per city landing page. 'file' is the page's path in the repo root. 'redfin_region' must match Redfin's 'City, ST' region label exactly, as it appears in the city_market_tracker data (region_type = city).",
   "cities": [
-    { "file": "frisco.html", "redfin_region": "Frisco, TX" },
-    { "file": "prosper.html", "redfin_region": "Prosper, TX" },
-    { "file": "mckinney.html", "redfin_region": "McKinney, TX" },
-    { "file": "dallas.html", "redfin_region": "Dallas, TX" },
-    { "file": "fort-worth.html", "redfin_region": "Fort Worth, TX" },
-    { "file": "arlington.html", "redfin_region": "Arlington, TX" },
-    { "file": "plano.html", "redfin_region": "Plano, TX" },
-    { "file": "irving.html", "redfin_region": "Irving, TX" },
-    { "file": "garland.html", "redfin_region": "Garland, TX" },
-    { "file": "grand-prairie.html", "redfin_region": "Grand Prairie, TX" },
-    { "file": "denton.html", "redfin_region": "Denton, TX" },
-    { "file": "mesquite.html", "redfin_region": "Mesquite, TX" },
-    { "file": "lewisville.html", "redfin_region": "Lewisville, TX" },
-    { "file": "carrollton.html", "redfin_region": "Carrollton, TX" },
-    { "file": "richardson.html", "redfin_region": "Richardson, TX" }
+    {
+      "file": "frisco.html",
+      "redfin_region": "Frisco, TX"
+    },
+    {
+      "file": "prosper.html",
+      "redfin_region": "Prosper, TX"
+    },
+    {
+      "file": "mckinney.html",
+      "redfin_region": "McKinney, TX"
+    },
+    {
+      "file": "dallas.html",
+      "redfin_region": "Dallas, TX"
+    },
+    {
+      "file": "fort-worth.html",
+      "redfin_region": "Fort Worth, TX"
+    },
+    {
+      "file": "arlington.html",
+      "redfin_region": "Arlington, TX"
+    },
+    {
+      "file": "plano.html",
+      "redfin_region": "Plano, TX"
+    },
+    {
+      "file": "irving.html",
+      "redfin_region": "Irving, TX"
+    },
+    {
+      "file": "garland.html",
+      "redfin_region": "Garland, TX"
+    },
+    {
+      "file": "grand-prairie.html",
+      "redfin_region": "Grand Prairie, TX"
+    },
+    {
+      "file": "denton.html",
+      "redfin_region": "Denton, TX"
+    },
+    {
+      "file": "mesquite.html",
+      "redfin_region": "Mesquite, TX"
+    },
+    {
+      "file": "lewisville.html",
+      "redfin_region": "Lewisville, TX"
+    },
+    {
+      "file": "carrollton.html",
+      "redfin_region": "Carrollton, TX"
+    },
+    {
+      "file": "richardson.html",
+      "redfin_region": "Richardson, TX"
+    },
+    {
+      "file": "allen.html",
+      "redfin_region": "Allen, TX"
+    },
+    {
+      "file": "celina.html",
+      "redfin_region": "Celina, TX"
+    },
+    {
+      "file": "flower-mound.html",
+      "redfin_region": "Flower Mound, TX"
+    },
+    {
+      "file": "little-elm.html",
+      "redfin_region": "Little Elm, TX"
+    },
+    {
+      "file": "grapevine.html",
+      "redfin_region": "Grapevine, TX"
+    },
+    {
+      "file": "mansfield.html",
+      "redfin_region": "Mansfield, TX"
+    },
+    {
+      "file": "north-richland-hills.html",
+      "redfin_region": "North Richland Hills, TX"
+    },
+    {
+      "file": "waxahachie.html",
+      "redfin_region": "Waxahachie, TX"
+    },
+    {
+      "file": "rowlett.html",
+      "redfin_region": "Rowlett, TX"
+    },
+    {
+      "file": "forney.html",
+      "redfin_region": "Forney, TX"
+    },
+    {
+      "file": "terrell.html",
+      "redfin_region": "Terrell, TX"
+    },
+    {
+      "file": "rockwall.html",
+      "redfin_region": "Rockwall, TX"
+    }
   ]
 }
