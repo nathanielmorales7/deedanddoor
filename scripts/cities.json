@@ -1,0 +1,20 @@
+{
+  "_comment": "One entry per city landing page. 'file' is the page's path in the repo root. 'redfin_region' must match Redfin's 'City, ST' region label exactly, as it appears in the city_market_tracker data (region_type = city).",
+  "cities": [
+    { "file": "frisco.html", "redfin_region": "Frisco, TX" },
+    { "file": "prosper.html", "redfin_region": "Prosper, TX" },
+    { "file": "mckinney.html", "redfin_region": "McKinney, TX" },
+    { "file": "dallas.html", "redfin_region": "Dallas, TX" },
+    { "file": "fort-worth.html", "redfin_region": "Fort Worth, TX" },
+    { "file": "arlington.html", "redfin_region": "Arlington, TX" },
+    { "file": "plano.html", "redfin_region": "Plano, TX" },
+    { "file": "irving.html", "redfin_region": "Irving, TX" },
+    { "file": "garland.html", "redfin_region": "Garland, TX" },
+    { "file": "grand-prairie.html", "redfin_region": "Grand Prairie, TX" },
+    { "file": "denton.html", "redfin_region": "Denton, TX" },
+    { "file": "mesquite.html", "redfin_region": "Mesquite, TX" },
+    { "file": "lewisville.html", "redfin_region": "Lewisville, TX" },
+    { "file": "carrollton.html", "redfin_region": "Carrollton, TX" },
+    { "file": "richardson.html", "redfin_region": "Richardson, TX" }
+  ]
+}
