@@ -292,3 +292,23 @@ footer .footer-links a:hover{border-bottom-color:var(--brass-light);}
   .hero ~ section{padding:48px 0;}
   .hero ~ section .section-head{margin-bottom:24px;padding-bottom:14px;}
 }
+
+
+/* ===== Cities nav mega-menu (added 2026-10-25) ===== */
+.navdrop-menu.mega{min-width:620px;max-width:92vw;padding:20px 22px;}
+.mega-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+.mega-group .mega-head{font-family:'IBM Plex Mono', monospace;font-size:10.5px;letter-spacing:0.07em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--rule);}
+.mega-group ul{list-style:none;margin:0;padding:0;}
+.mega-group a{display:block;padding:6px 4px;font-size:13.5px;border-radius:2px;color:var(--ink-soft);}
+.mega-group a:hover{background:var(--paper-dim);color:var(--ink);}
+.mega-group .todo{color:#A8A296;}
+.mega-foot{margin-top:16px;padding-top:14px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12.5px;color:var(--ink-soft);}
+.mega-foot a{font-weight:600;color:var(--navy);border-bottom:1.5px solid var(--brass);}
+
+@media (max-width:860px){
+  .navdrop-menu.mega{min-width:0;max-width:none;padding:0 0 4px 16px;}
+  .mega-grid{grid-template-columns:1fr;gap:0;}
+  .mega-group{margin-bottom:10px;}
+  .mega-group .mega-head{margin-top:8px;}
+  .mega-foot{display:none;}
+}
