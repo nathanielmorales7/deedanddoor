@@ -80,6 +80,26 @@
     .statstrip-inner{flex-wrap:wrap;}
     .stat{flex:1 1 45%;border-right:none;margin-bottom:10px;}
   }
+
+  .navdrop{position:relative;}
+  .navdrop-trigger{display:inline-flex;align-items:center;gap:5px;cursor:pointer;}
+  .navdrop-trigger::after{content:'';width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-3px;}
+  .navdrop-menu{display:none;position:absolute;top:100%;left:0;margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:3px;box-shadow:0 14px 28px rgba(28,30,32,0.14);min-width:230px;padding:6px;z-index:30;}
+  .navdrop-menu::before{content:'';position:absolute;top:-18px;left:0;right:0;height:18px;}
+  .navdrop:hover .navdrop-menu,.navdrop:focus-within .navdrop-menu,.navdrop.hover-open .navdrop-menu{display:block;}
+  .navdrop-menu a{display:block;padding:11px 12px;font-size:14px;font-weight:400;color:var(--ink-soft);border-radius:2px;}
+  .navdrop-menu a:hover{background:var(--paper-dark);color:var(--ink);}
+  .navdrop-menu.mega{min-width:620px;max-width:92vw;padding:20px 22px;}
+  .mega-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+  .mega-group .mega-head{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--line);}
+  .mega-group ul{list-style:none;margin:0;padding:0;}
+  .mega-group a{display:block;padding:6px 4px;font-size:13.5px;font-weight:400;border-radius:2px;color:var(--ink-soft);}
+  .mega-group a:hover{background:var(--paper-dark);color:var(--ink);}
+  .mega-group .todo{color:#A8A296;}
+  @media (max-width:860px){
+    .navdrop-menu.mega{min-width:0;max-width:none;}
+    .mega-grid{grid-template-columns:1fr;gap:0;}
+  }
 </style>
 </head>
 <body>
@@ -92,10 +112,82 @@
     </a>
     <div class="navlinks">
       <a href="listings.html">Listings</a>
-      <a href="#" class="active">Cities</a>
+      <div class="navdrop">
+        <a href="#" class="navdrop-trigger">Cities</a>
+        <div class="navdrop-menu mega">
+          <div class="mega-grid">
+            <div class="mega-group">
+              <div class="mega-head">Core Cities</div>
+              <ul>
+                <li><a href="dallas.html">Dallas</a></li>
+                <li><a href="fort-worth.html">Fort Worth</a></li>
+              </ul>
+            </div>
+            <div class="mega-group">
+              <div class="mega-head">North Dallas &amp; Collin Co.</div>
+              <ul>
+                <li><a href="plano.html">Plano</a></li>
+                <li><a href="richardson.html">Richardson</a></li>
+                <li><a href="mckinney.html">McKinney</a></li>
+                <li><a href="frisco.html">Frisco</a></li>
+                <li><a href="prosper.html">Prosper</a></li>
+                <li><a class="todo">Allen</a></li>
+                <li><a class="todo">Celina</a></li>
+              </ul>
+            </div>
+            <div class="mega-group">
+              <div class="mega-head">Denton County</div>
+              <ul>
+                <li><a href="denton.html">Denton</a></li>
+                <li><a href="lewisville.html">Lewisville</a></li>
+                <li><a href="carrollton.html">Carrollton</a></li>
+                <li><a class="todo">Flower Mound</a></li>
+                <li><a class="todo">Little Elm</a></li>
+                <li><a class="todo">Grapevine</a></li>
+              </ul>
+            </div>
+            <div class="mega-group">
+              <div class="mega-head">Mid-Cities &amp; South</div>
+              <ul>
+                <li><a href="arlington.html">Arlington</a></li>
+                <li><a href="grand-prairie.html">Grand Prairie</a></li>
+                <li><a href="irving.html">Irving</a></li>
+                <li><a class="todo">Mansfield</a></li>
+                <li><a class="todo">North Richland Hills</a></li>
+                <li><a class="todo">Waxahachie</a></li>
+              </ul>
+            </div>
+            <div class="mega-group">
+              <div class="mega-head">East DFW</div>
+              <ul>
+                <li><a href="garland.html">Garland</a></li>
+                <li><a href="mesquite.html">Mesquite</a></li>
+                <li><a class="todo">Rowlett</a></li>
+                <li><a class="todo">Forney</a></li>
+                <li><a class="todo">Terrell</a></li>
+                <li><a class="todo">Rockwall</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <a href="journal.html">Journal</a>
-      <a href="buyers.html">Buyers</a>
-      <a href="sellers.html">Sellers</a>
+      <div class="navdrop">
+        <a href="buyers.html" class="navdrop-trigger">Buyers</a>
+        <div class="navdrop-menu">
+          <a href="buyers.html">Buyer Overview</a>
+          <a href="investors.html">Investors &amp; Flippers</a>
+          <a href="landlords.html">Landlords</a>
+        </div>
+      </div>
+      <div class="navdrop">
+        <a href="sellers.html" class="navdrop-trigger">Sellers</a>
+        <div class="navdrop-menu">
+          <a href="sellers.html">Seller Overview</a>
+          <a href="expired-listing.html">My Home Didn't Sell</a>
+          <a href="fsbo.html">How to Sell on My Own</a>
+        </div>
+      </div>
       <a href="about.html">About</a>
       <a href="mailto:nate@deedanddoor.com" class="navcta">Get in touch</a>
     </div>
@@ -230,5 +322,19 @@ document.querySelectorAll('.faq-q').forEach(function(q){
 });
 </script>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.navlinks .navdrop').forEach(function (drop) {
+    var closeTimer = null;
+    function openDrop() { clearTimeout(closeTimer); drop.classList.add('hover-open'); }
+    function scheduleClose() { clearTimeout(closeTimer); closeTimer = setTimeout(function () { drop.classList.remove('hover-open'); }, 400); }
+    drop.addEventListener('mouseenter', openDrop);
+    drop.addEventListener('mouseleave', scheduleClose);
+    drop.addEventListener('focusin', openDrop);
+    drop.addEventListener('focusout', scheduleClose);
+  });
+});
+</script>
 </body>
 </html>
