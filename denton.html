@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Denton, TX Real Estate | Nathaniel Morales, DFW Realtor</title>
+<meta name="description" content="Buying or selling in Denton, TX? Nathaniel Morales is a DFW Realtor with Local Realty Agency who helps buyers, sellers, and investors navigate Denton ISD and the city's neighborhoods.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3EFE3;--paper-dark:#ECE5D3;--navy:#152538;--navy-soft:#223449;
+    --brass:#B8874A;--brass-light:#D9B37E;--sage:#5C7A5E;--ink:#1C1E20;--ink-soft:#5B6269;--line:#DCD4BF;--white:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Source Sans 3',sans-serif;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:'Fraunces',serif;margin:0;color:var(--navy);}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  nav{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  .navrow{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1140px;margin:0 auto;}
+  .brand{display:flex;flex-direction:column;}
+  .brand .name{font-family:'Fraunces',serif;font-weight:600;font-size:20px;color:var(--navy);}
+  .brand .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-top:2px;}
+  .navlinks{display:flex;align-items:center;gap:28px;}
+  .navlinks a{font-weight:600;font-size:15px;color:var(--navy-soft);}
+  .navlinks a.active{color:var(--brass);border-bottom:2px solid var(--brass);padding-bottom:4px;}
+  .navcta{background:var(--navy);color:var(--paper)!important;padding:11px 20px;border-radius:3px;font-weight:700;font-size:14px;}
+  @media (max-width:860px){.navlinks{display:none;}}
+  .hero{background:var(--navy);padding:72px 0 0;position:relative;overflow:hidden;}
+  .hero-inner{display:grid;grid-template-columns:1.3fr .9fr;gap:48px;align-items:end;padding-bottom:40px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-light);margin-bottom:16px;}
+  .hero h1{color:var(--paper);font-size:44px;line-height:1.14;font-weight:600;max-width:600px;}
+  .hero p.lede{color:#C7CDD4;font-size:17px;max-width:520px;margin-top:16px;}
+  .hero-ctas{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap;}
+  .btn-primary{background:var(--brass);color:var(--navy);padding:14px 26px;border-radius:3px;font-weight:700;font-size:15px;}
+  .btn-ghost{border:1.5px solid #4A5A6C;color:var(--paper);padding:12.5px 24px;border-radius:3px;font-weight:700;font-size:15px;}
+  .hero-fact{background:#1C3049;border:1px solid #2C4259;border-radius:6px;padding:22px 24px;}
+  .hero-fact .label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass-light);}
+  .hero-fact .val{font-family:'Fraunces',serif;font-size:32px;color:var(--paper);margin-top:6px;}
+  .hero-fact .sub{font-size:13px;color:#9AA4AD;margin-top:4px;}
+  .statstrip{background:var(--brass);}
+  .statstrip-inner{display:flex;gap:0;padding:14px 0;max-width:1140px;margin:0 auto;padding-left:24px;padding-right:24px;}
+  .stat{flex:1;border-right:1px solid rgba(21,37,56,0.2);padding:0 20px;}
+  .stat:last-child{border-right:none;}
+  .stat .n{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;color:var(--navy);}
+  .stat .l{font-size:12.5px;color:var(--navy-soft);margin-top:2px;}
+  section{padding:64px 0;}
+  .section-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;}
+  h2{font-size:30px;margin-bottom:18px;}
+  .lead-p{font-size:17px;color:var(--ink-soft);max-width:700px;}
+  .lead-p + .lead-p{margin-top:16px;}
+  .area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;}
+  .area-card{background:var(--paper-dark);border-radius:6px;padding:20px;border-left:3px solid var(--brass);}
+  .area-card h4{font-family:'Fraunces',serif;font-size:17px;color:var(--navy);margin:0 0 6px;}
+  .area-card p{font-size:14px;color:var(--ink-soft);margin:0;}
+  .faq-section{background:var(--navy-soft);}
+  .faq-section h2{color:var(--paper);}
+  .faq-section .section-tag{color:var(--brass-light);}
+  .faq-item{border-bottom:1px solid #35495D;padding:18px 0;}
+  .faq-q{color:var(--paper);font-weight:600;font-size:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+  .faq-a{color:#C7CDD4;font-size:15px;margin-top:10px;display:none;max-width:720px;}
+  .faq-item.open .faq-a{display:block;}
+  .faq-item.open .chev{transform:rotate(45deg);}
+  .chev{font-size:20px;color:var(--brass-light);transition:transform .15s;}
+  .cta-band{background:var(--brass);text-align:center;}
+  .cta-band h2{color:var(--navy);}
+  .cta-band p{color:#4A3A22;max-width:560px;margin:14px auto 0;font-size:16px;}
+  .cta-band .btn-primary{background:var(--navy);color:var(--paper);margin-top:24px;display:inline-block;}
+  footer{background:var(--navy);color:#9AA4AD;padding:48px 0 28px;font-size:13.5px;}
+  footer .fwrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;}
+  footer a{color:#C7CDD4;}
+  footer .fbrand{color:var(--paper);font-family:'Fraunces',serif;font-size:16px;}
+  footer .fnote{margin-top:18px;color:#6E7882;font-size:12px;max-width:640px;}
+  @media (max-width:860px){
+    .hero-inner{grid-template-columns:1fr;}
+    .area-grid{grid-template-columns:1fr;}
+    .statstrip-inner{flex-wrap:wrap;}
+    .stat{flex:1 1 45%;border-right:none;margin-bottom:10px;}
+  }
+</style>
+</head>
+<body>
+
+
+<nav>
+  <div class="navrow">
+    <a href="index.html" class="brand">
+      <span class="name">Nathaniel Morales</span>
+      <span class="tag">Local Realty Agency</span>
+    </a>
+    <div class="navlinks">
+      <a href="listings.html">Listings</a>
+      <a href="#" class="active">Cities</a>
+      <a href="journal.html">Journal</a>
+      <a href="buyers.html">Buyers</a>
+      <a href="sellers.html">Sellers</a>
+      <a href="about.html">About</a>
+      <a href="mailto:nate@deedanddoor.com" class="navcta">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Denton, TX &middot; Denton County</div>
+      <h1>Denton real estate.</h1>
+      <p class="lede">A Realtor with Local Realty Agency, working with buyers, sellers, and investors across Denton.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary">View Denton listings</a>
+        <a href="#" class="btn-ghost">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-fact">
+      <div class="label">Median sale price</div>
+      <!-- AUTO:PRICE:START -->
+      <div class="val">$383,317</div>
+      <div class="sub">Redfin, Sept. 2026</div>
+      <!-- AUTO:PRICE:END -->
+    </div>
+  </div>
+  <div class="statstrip">
+    <div class="statstrip-inner">
+      <div class="stat"><span class="n">Denton ISD</span><span class="l"> primary school district</span></div>
+      <div class="stat"><span class="n">40 mi</span><span class="l"> to downtown Dallas</span></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-tag">Why Denton</div>
+    <h2>A university town anchoring the north end of DFW</h2>
+    <p class="lead-p">Denton is the Denton County seat and home to both the University of North Texas and Texas Woman's University, giving it a distinct identity from the rest of the metroplex &mdash; a historic downtown square, a sizable renter and student population, and a music and arts scene that draws people beyond its university crowd. It's zoned primarily to Denton ISD, with Lewisville ISD, Argyle ISD, and Northwest ISD serving parts of the surrounding area.</p>
+    <p class="lead-p">Housing ranges from older homes near downtown and the university campuses to newer construction on the city's outskirts, so Denton can work for buyers wanting walkable, established neighborhoods or more typical suburban development, depending on where you look.</p>
+  </div>
+</section>
+
+<section style="background:var(--paper-dark);">
+  <div class="wrap">
+    <div class="section-tag">Areas to know</div>
+    <h2>Denton, from the historic square to newer growth</h2>
+    <p class="lead-p">A few of the areas buyers ask about most:</p>
+    <div class="area-grid">
+      <div class="area-card">
+        <h4>Downtown Denton Square</h4>
+        <p>Historic core with shops, restaurants, and a walkable courthouse square, surrounded by older homes.</p>
+      </div>
+      <div class="area-card">
+        <h4>University area (UNT / TWU)</h4>
+        <p>Dense mix of rentals and owner-occupied homes near both university campuses.</p>
+      </div>
+      <div class="area-card">
+        <h4>Rayzor Ranch</h4>
+        <p>Newer development anchored by retail, convenient to US-380.</p>
+      </div>
+      <div class="area-card">
+        <h4>Unicorn Lake</h4>
+        <p>Established neighborhood built around a small lake, popular with families.</p>
+      </div>
+      <div class="area-card">
+        <h4>North Denton</h4>
+        <p>Newer construction on the city's northern edge, farther from downtown.</p>
+      </div>
+      <div class="area-card">
+        <h4>Robson Ranch area</h4>
+        <p>Active-adult and newer residential development on Denton's southwestern edge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="wrap">
+    <div class="section-tag">FAQ</div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q"><span>What school district serves Denton?</span><span class="chev">+</span></div>
+        <div class="faq-a">Most of the city is zoned to Denton ISD, though surrounding areas fall into Lewisville ISD, Argyle ISD, or Northwest ISD depending on the address. I always confirm the exact zoning before you commit to a house.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>What's it like living near downtown Denton?</span><span class="chev">+</span></div>
+        <div class="faq-a">Walkable and lively, with a lot of the city's restaurant and music scene within a few blocks, but homes tend to be older and the area sees more university-related traffic than Denton's outer neighborhoods.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>How do Denton's neighborhoods differ from each other?</span><span class="chev">+</span></div>
+        <div class="faq-a">Quite a bit &mdash; from the dense, walkable downtown and university area to newer suburban-style development on the city's edges. Worth comparing a few before deciding.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>What's the commute like from Denton?</span><span class="chev">+</span></div>
+        <div class="faq-a">Denton sits along I-35E and I-35W, roughly 40 miles from downtown Dallas &mdash; one of the longer commutes in the metroplex, so it's worth weighing against where you'll actually be working.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Thinking about Denton?</h2>
+    <p>Whether you're buying, selling, or investing here, let's start with a conversation about what you're actually trying to accomplish.</p>
+    <a href="#" class="btn-primary">Get in touch</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fwrap">
+    <div>
+      <div class="fbrand">Nathaniel Morales</div>
+      <div style="margin-top:6px;">Local Realty Agency &middot; Addison, TX</div>
+    </div>
+    <div>
+      <div>nate@deedanddoor.com</div>
+    </div>
+    <div>
+      <div>TREC#0799763</div>
+      <div style="margin-top:6px;"><a href="https://drive.google.com/file/d/1LQB6zGl3YIvo1HSE-Hczx-Ya6gvfZFJM/view?usp=sharing" target="_blank" rel="noopener">Information About Brokerage Services</a></div>
+      <div style="margin-top:6px;"><a href="https://www.trec.texas.gov/forms/consumer-protection-notice" target="_blank" rel="noopener">Consumer Protection Notice</a></div>
+    </div>
+  </div>
+  <div class="wrap fnote">Median sale price above: Redfin, accessed Oct. 2026. Updated monthly.</div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click', function(){
+    q.closest('.faq-item').classList.toggle('open');
+  });
+});
+</script>
+
+</body>
+</html>
