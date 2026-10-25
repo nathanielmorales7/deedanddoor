@@ -61,16 +61,16 @@ def fetch_latest_prices(target_regions):
         wanted = set(target_regions)
 
         for row in reader:
-            if row.get("region_type") != "city":
+            if row.get("REGION_TYPE") != "place":
                 continue
-            if row.get("property_type") != "All Residential":
+            if row.get("PROPERTY_TYPE") != "All Residential":
                 continue
-            region = (row.get("region") or "").strip()
+            region = (row.get("REGION") or "").strip()
             if region not in wanted:
                 continue
 
-            period_end_raw = row.get("period_end")
-            price_raw = row.get("median_sale_price")
+            period_end_raw = row.get("PERIOD_END")
+            price_raw = row.get("MEDIAN_SALE_PRICE")
             if not period_end_raw or not price_raw:
                 continue
             try:
