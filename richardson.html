@@ -100,7 +100,7 @@
     .navdrop-menu.mega{min-width:0;max-width:none;}
     .mega-grid{grid-template-columns:1fr;gap:0;}
   }
-</style>
+undefined</style>
 </head>
 <body>
 
@@ -190,10 +190,21 @@
         </div>
       </div>
       <a href="about.html">About</a>
-      <a href="mailto:nate@deedanddoor.com" class="navcta">Get in touch</a>
+    </div>
+    <div class="nav-actions">
+      <a href="#" class="navcta lead-capture-btn">Get in touch</a>
+      <button class="navtoggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
+  <div class="navmobile"></div>
 </nav>
+
+<div class="lead-modal-overlay" id="lead-modal-overlay">
+  <div class="lead-modal-box">
+    <button type="button" class="lead-modal-close" aria-label="Close">&times;</button>
+    <iframe src="https://api.leadconnectorhq.com/widget/form/tkG0CPmMqhR8RfDId2uV" title="Lead Capture" loading="lazy"></iframe>
+  </div>
+</div>
 
 <div class="hero">
   <div class="wrap hero-inner">
@@ -202,8 +213,8 @@
       <h1>Richardson real estate.</h1>
       <p class="lede">A Realtor with Local Realty Agency, working with buyers, sellers, and investors across Richardson.</p>
       <div class="hero-ctas">
-        <a href="#" class="btn-primary">View Richardson listings</a>
-        <a href="#" class="btn-ghost">Get in touch</a>
+        <a href="listings.html" class="btn-primary">View Richardson listings</a>
+        <a href="#" class="btn-ghost lead-capture-btn">Get in touch</a>
       </div>
     </div>
     <div class="hero-fact">
@@ -338,5 +349,5 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
-</body>
+undefined</body>
 </html>
