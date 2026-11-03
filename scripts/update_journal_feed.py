@@ -39,8 +39,8 @@ def strip_tags(text):
 
 
 def short_date(dt):
-    """'Sep 19' style, no leading zero, no OS-specific strftime flags."""
-    return "{} {}".format(dt.strftime("%b"), dt.day)
+    """'Sep 19, 2026' style, no leading zero, no OS-specific strftime flags."""
+    return "{} {}, {}".format(dt.strftime("%b"), dt.day, dt.year)
 
 
 def parse_flat_post(path):
