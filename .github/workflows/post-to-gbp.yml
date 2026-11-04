@@ -7,6 +7,7 @@ on:
       - 'journal-*.html'
       - '_posts/**'
       - 'scripts/post_to_gbp.py'
+  workflow_dispatch: {}
 
 jobs:
   post-to-gbp:
