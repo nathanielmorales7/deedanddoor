@@ -1,0 +1,38 @@
+name: Post new Journal entries to Google Business Profile
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'journal-*.html'
+      - '_posts/**'
+      - 'scripts/post_to_gbp.py'
+
+jobs:
+  post-to-gbp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Google Business Profile poster
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          GBP_ACCOUNT_ID: ${{ secrets.GBP_ACCOUNT_ID }}
+          GBP_LOCATION_ID: ${{ secrets.GBP_LOCATION_ID }}
+        run: python3 scripts/post_to_gbp.py
+
+      - name: Commit updated state file (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/.gbp_state.json
+          git diff --staged --quiet || git commit -m "chore: record last Google Business Profile post [skip ci]"
+          git diff --staged --quiet || git push
