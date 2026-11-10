@@ -312,3 +312,7 @@ footer .footer-links a:hover{border-bottom-color:var(--brass-light);}
   .mega-group .mega-head{margin-top:8px;}
   .mega-foot{display:none;}
 }
+
+/* Journal nav link accent (added 2026-11-10, per Nate) */
+.navlinks a[href="journal.html"],.navmobile a[href="journal.html"]{color:var(--navy);font-weight:600;}
+.navlinks a[href="journal.html"]:hover,.navmobile a[href="journal.html"]:hover{color:var(--brass);}
