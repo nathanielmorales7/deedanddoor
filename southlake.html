@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southlake, TX Real Estate | Nathaniel Morales, DFW Realtor</title>
+<meta name="description" content="Buying or selling in Southlake, TX? Nathaniel Morales is a DFW Realtor with Local Realty Agency who helps buyers, sellers, and investors navigate Carroll ISD and the city's neighborhoods.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3EFE3;--paper-dark:#ECE5D3;--navy:#152538;--navy-soft:#223449;
+    --brass:#B8874A;--brass-light:#D9B37E;--sage:#5C7A5E;--ink:#1C1E20;--ink-soft:#5B6269;--line:#DCD4BF;--white:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Source Sans 3',sans-serif;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:'Fraunces',serif;margin:0;color:var(--navy);}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  nav{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  .navrow{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1140px;margin:0 auto;}
+  .brand{display:flex;flex-direction:column;}
+  .brand .name{font-family:'Fraunces',serif;font-weight:600;font-size:20px;color:var(--navy);}
+  .brand .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-top:2px;}
+  .navlinks{display:flex;align-items:center;gap:28px;}
+  .navlinks a{font-weight:600;font-size:15px;color:var(--navy-soft);}
+  .navlinks a.active{color:var(--brass);border-bottom:2px solid var(--brass);padding-bottom:4px;}
+  .navcta{background:var(--navy);color:var(--paper)!important;padding:11px 20px;border-radius:3px;font-weight:700;font-size:14px;}
+  @media (max-width:860px){.navlinks{display:none;}}
+  .hero{background:var(--navy);padding:72px 0 0;position:relative;overflow:hidden;}
+  .hero-inner{display:grid;grid-template-columns:1.3fr .9fr;gap:48px;align-items:end;padding-bottom:40px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-light);margin-bottom:16px;}
+  .hero h1{color:var(--paper);font-size:44px;line-height:1.14;font-weight:600;max-width:600px;}
+  .hero p.lede{color:#C7CDD4;font-size:17px;max-width:520px;margin-top:16px;}
+  .hero-ctas{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap;}
+  .btn-primary{background:var(--brass);color:var(--navy);padding:14px 26px;border-radius:3px;font-weight:700;font-size:15px;}
+  .btn-ghost{border:1.5px solid #4A5A6C;color:var(--paper);padding:12.5px 24px;border-radius:3px;font-weight:700;font-size:15px;}
+  .hero-fact{background:#1C3049;border:1px solid #2C4259;border-radius:6px;padding:22px 24px;}
+  .hero-fact .label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass-light);}
+  .hero-fact .val{font-family:'Fraunces',serif;font-size:32px;color:var(--paper);margin-top:6px;}
+  .hero-fact .sub{font-size:13px;color:#9AA4AD;margin-top:4px;}
+  .statstrip{background:var(--brass);}
+  .statstrip-inner{display:flex;gap:0;padding:14px 0;max-width:1140px;margin:0 auto;padding-left:24px;padding-right:24px;}
+  .stat{flex:1;border-right:1px solid rgba(21,37,56,0.2);padding:0 20px;}
+  .stat:last-child{border-right:none;}
+  .stat .n{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;color:var(--navy);}
+  .stat .l{font-size:12.5px;color:var(--navy-soft);margin-top:2px;}
+  section{padding:64px 0;}
+  .section-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;}
+  h2{font-size:30px;margin-bottom:18px;}
+  .lead-p{font-size:17px;color:var(--ink-soft);max-width:700px;}
+  .lead-p + .lead-p{margin-top:16px;}
+  .area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;}
+  .area-card{background:var(--paper-dark);border-radius:6px;padding:20px;border-left:3px solid var(--brass);}
+  .area-card h4{font-family:'Fraunces',serif;font-size:17px;color:var(--navy);margin:0 0 6px;}
+  .area-card p{font-size:14px;color:var(--ink-soft);margin:0;}
+  .faq-section{background:var(--navy-soft);}
+  .faq-section h2{color:var(--paper);}
+  .faq-section .section-tag{color:var(--brass-light);}
+  .faq-item{border-bottom:1px solid #35495D;padding:18px 0;}
+  .faq-q{color:var(--paper);font-weight:600;font-size:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+  .faq-a{color:#C7CDD4;font-size:15px;margin-top:10px;display:none;max-width:720px;}
+  .faq-item.open .faq-a{display:block;}
+  .faq-item.open .chev{transform:rotate(45deg);}
+  .chev{font-size:20px;color:var(--brass-light);transition:transform .15s;}
+  .cta-band{background:var(--brass);text-align:center;}
+  .cta-band h2{color:var(--navy);}
+  .cta-band p{color:#4A3A22;max-width:560px;margin:14px auto 0;font-size:16px;}
+  .cta-band .btn-primary{background:var(--navy);color:var(--paper);margin-top:24px;display:inline-block;}
+  footer{background:var(--navy);color:#9AA4AD;padding:48px 0 28px;font-size:14.5px;}
+  footer .fwrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;}
+  footer a{color:#C7CDD4;}
+  footer .fbrand{color:var(--paper);font-family:'Fraunces',serif;font-size:16px;}
+  footer .fnote{margin-top:18px;color:#6E7882;font-size:12px;max-width:640px;}
+  @media (max-width:860px){
+    .hero-inner{grid-template-columns:1fr;}
+    .area-grid{grid-template-columns:1fr;}
+    .statstrip-inner{flex-wrap:wrap;}
+    .stat{flex:1 1 45%;border-right:none;margin-bottom:10px;}
+  }
+
+  .navdrop{position:relative;}
+  .navdrop-trigger{display:inline-flex;align-items:center;gap:5px;cursor:pointer;}
+  .navdrop-trigger::after{content:'';width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-3px;}
+  .navdrop-menu{display:none;position:absolute;top:100%;left:0;margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:3px;box-shadow:0 14px 28px rgba(28,30,32,0.14);min-width:230px;padding:6px;z-index:30;}
+  .navdrop-menu::before{content:'';position:absolute;top:-18px;left:0;right:0;height:18px;}
+  .navdrop:hover .navdrop-menu,.navdrop:focus-within .navdrop-menu,.navdrop.hover-open .navdrop-menu{display:block;}
+  .navdrop-menu a{display:block;padding:11px 12px;font-size:14px;font-weight:400;color:var(--ink-soft);border-radius:2px;}
+  .navdrop-menu a:hover{background:var(--paper-dark);color:var(--ink);}
+  .navdrop-menu.mega{min-width:620px;max-width:92vw;padding:20px 22px;}
+  .mega-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+  .mega-group .mega-head{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--line);}
+  .mega-group ul{list-style:none;margin:0;padding:0;}
+  .mega-group a{display:block;padding:6px 4px;font-size:13.5px;font-weight:400;border-radius:2px;color:var(--ink-soft);}
+  .mega-group a:hover{background:var(--paper-dark);color:var(--ink);}
+  .mega-group .todo{color:#A8A296;}
+  @media (max-width:860px){
+    .navdrop-menu.mega{min-width:0;max-width:none;}
+    .mega-grid{grid-template-columns:1fr;gap:0;}
+  }
+
+.nav-actions{display:flex;align-items:center;gap:16px;}
+.navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:28px;height:28px;background:none;border:none;cursor:pointer;padding:0;}
+.navtoggle span{display:block;width:100%;height:2px;background:var(--ink);border-radius:1px;}
+.navmobile{display:none;flex-direction:column;gap:0;background:var(--paper);border-top:1px solid var(--line);padding:8px 32px 20px;}
+.navmobile a{padding:12px 0;font-size:15px;color:var(--ink-soft);border-bottom:1px solid var(--line);}
+.navmobile a:last-child{border-bottom:none;}
+.navmobile.open{display:flex;}
+.navmobile .navcta{display:inline-block;width:fit-content;background:var(--navy);color:var(--paper);padding:9px 18px;border-radius:2px;margin-top:10px;border-bottom:none;}
+@media (max-width:860px){
+  .navtoggle{display:flex;}
+  .navdrop{position:static;}
+  .navdrop-menu{position:static;display:none;box-shadow:none;border:none;background:none;margin:0;padding:0 0 4px 16px;min-width:0;}
+  .navdrop.mobile-open .navdrop-menu{display:block;}
+  .navdrop-trigger{width:100%;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);color:var(--ink-soft);font-size:15px;}
+  .navmobile .navdrop-menu a{border-bottom:1px solid var(--line);padding:12px 0;}
+}
+.lead-modal-overlay{display:none;position:fixed;inset:0;background:rgba(21,37,56,0.75);z-index:9999;align-items:center;justify-content:center;padding:20px;}
+.lead-modal-overlay.open{display:flex;}
+.lead-modal-box{position:relative;background:#F3EFE3;border-radius:12px;max-width:480px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.35);}
+.lead-modal-box iframe{display:block;width:100%;height:701px;max-height:80vh;border:none;border-radius:12px;}
+.lead-modal-close{position:absolute;top:-16px;right:-16px;width:32px;height:32px;border-radius:50%;background:#152538;color:#F3EFE3;border:none;font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:1;}
+@media (max-width:600px){.lead-modal-box{max-width:100%;}.lead-modal-box iframe{height:80vh;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navrow">
+    <a href="index.html" class="brand">
+      <span class="name">Nathaniel Morales</span>
+      <span class="tag">Local Realty Agency</span>
+    </a>
+    <div class="navlinks">
+      <a href="listings.html">Listings</a>
+      <div class="navdrop">
+        <a href="#" class="navdrop-trigger">Cities</a>
+        <div class="navdrop-menu mega">
+          <div class="mega-grid">
+            <div class="mega-group">
+              <div class="mega-head">Core Cities</div>
+              <ul>
+                <li><a href="dallas.html">Dallas</a></li>
+                <li><a href="fort-worth.html">Fort Worth</a></li>
+              </ul>
+            </div>
+            <div class="mega-group">
+              <div class="mega-head">North Dallas &amp; Collin Co.</div>
+              <ul>
+                <li><a href="plano.html">Plano</a></li>
+                <li><a href="richardson.html">Richardson</a></li>
+                <li><a href="mckinney.html">McKinney</a></li>
+                <li><a href="frisco.html">Frisco</a></li>
+                <li><a href="prosper.html">Prosper</a></li>
+                <li><a href="allen.html">Allen</a></li>
+                <li><a href="celina.html">Celina</a></li>
+              </ul>
+            </div>
+            <div class="mega-group">
+              <div class="mega-head">Denton County</div>
+              <ul>
+                <li><a href="denton.html">Denton</a></li>
+                <li><a href="lewisville.html">Lewisville</a></li>
+                <li><a href="carrollton.html">Carrollton</a></li>
+                <li><a href="flower-mound.html">Flower Mound</a></li>
+                <li><a href="little-elm.html">Little Elm</a></li>
+                <li><a href="grapevine.html">Grapevine</a></li>
+                <li><a href="southlake.html">Southlake</a></li>
+              </ul>
+            </div>
+            <div class="mega-group">
+              <div class="mega-head">Mid-Cities &amp; South</div>
+              <ul>
+                <li><a href="arlington.html">Arlington</a></li>
+                <li><a href="grand-prairie.html">Grand Prairie</a></li>
+                <li><a href="irving.html">Irving</a></li>
+                <li><a href="mansfield.html">Mansfield</a></li>
+                <li><a href="north-richland-hills.html">North Richland Hills</a></li>
+                <li><a href="waxahachie.html">Waxahachie</a></li>
+              </ul>
+            </div>
+            <div class="mega-group">
+              <div class="mega-head">East DFW</div>
+              <ul>
+                <li><a href="garland.html">Garland</a></li>
+                <li><a href="mesquite.html">Mesquite</a></li>
+                <li><a href="rowlett.html">Rowlett</a></li>
+                <li><a href="forney.html">Forney</a></li>
+                <li><a href="terrell.html">Terrell</a></li>
+                <li><a href="rockwall.html">Rockwall</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="journal.html">Journal</a>
+      <div class="navdrop">
+        <a href="buyers.html" class="navdrop-trigger">Buyers</a>
+        <div class="navdrop-menu">
+          <a href="buyers.html">Buyer Overview</a>
+          <a href="investors.html">Investors &amp; Flippers</a>
+          <a href="landlords.html">Landlords</a>
+        </div>
+      </div>
+      <div class="navdrop">
+        <a href="sellers.html" class="navdrop-trigger">Sellers</a>
+        <div class="navdrop-menu">
+          <a href="sellers.html">Seller Overview</a>
+          <a href="expired-listing.html">My Home Didn't Sell</a>
+          <a href="fsbo.html">How to Sell on My Own</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-actions">
+      <a href="#" class="navcta lead-capture-btn">Get in touch</a>
+      <button class="navtoggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="navmobile"></div>
+</nav>
+
+<div class="lead-modal-overlay" id="lead-modal-overlay">
+  <div class="lead-modal-box">
+    <button type="button" class="lead-modal-close" aria-label="Close">&times;</button>
+    <iframe src="https://api.leadconnectorhq.com/widget/form/tkG0CPmMqhR8RfDId2uV" title="Lead Capture"></iframe>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Southlake, TX &middot; Tarrant County</div>
+      <h1>Southlake real estate.</h1>
+      <p class="lede">A Realtor with Local Realty Agency, working with buyers, sellers, and investors across Southlake.</p>
+      <div class="hero-ctas">
+        <a href="listings.html" class="btn-primary">View Southlake listings</a>
+        <a href="#" class="btn-ghost lead-capture-btn">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-fact">
+      <div class="label">Median sale price</div>
+      <!-- AUTO:PRICE:START -->
+      <div class="val">$1,424,322</div>
+      <div class="sub">Redfin, Sep 2026</div>
+      <!-- AUTO:PRICE:END -->
+    </div>
+  </div>
+  <div class="statstrip">
+    <div class="statstrip-inner">
+      <div class="stat"><span class="n">Carroll ISD</span><span class="l"> primary school district</span></div>
+      <div class="stat"><span class="n">26 mi</span><span class="l"> to downtown Dallas</span></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-tag">Why Southlake</div>
+    <h2>DFW's benchmark for master-planned, high-end living</h2>
+    <p class="lead-p">Southlake sits mostly in Tarrant County with a small slice reaching into Denton County, and it's become one of the most sought-after addresses in the Metroplex. Southlake Town Square &mdash; a 130-acre, park-once-and-walk district of shops, restaurants, and Town Hall &mdash; gives the city a downtown most suburbs don't have, and it's zoned almost entirely to Carroll ISD, one of the highest-rated districts in DFW.</p>
+    <p class="lead-p">Housing here skews toward the custom and move-up end of the market, from golf-course sections built around Timarron Country Club to newer, more compact lots in Carillon and larger estate lots on the city's north side. Buyers moving to Southlake are typically trading commute time for school ratings and square footage, and it's worth confirming exact school zoning before writing an offer &mdash; a few northern pockets zone to Northwest ISD instead.</p>
+  </div>
+</section>
+
+<section style="background:var(--paper-dark);">
+  <div class="wrap">
+    <div class="section-tag">Areas to know</div>
+    <h2>Southlake, from Town Square to the north side</h2>
+    <p class="lead-p">A few of the areas buyers ask about most:</p>
+    <div class="area-grid">
+      <div class="area-card">
+        <h4>Southlake Town Square</h4>
+        <p>Walkable downtown district with shops, restaurants, and Town Hall, surrounded by townhomes and condos.</p>
+      </div>
+      <div class="area-card">
+        <h4>Timarron</h4>
+        <p>Golf-anchored master-planned community built around Timarron Country Club, with several named sections and mature trees.</p>
+      </div>
+      <div class="area-card">
+        <h4>Carillon</h4>
+        <p>Newer community built starting in 2012, with architecturally designed homes on smaller lots and internal trails.</p>
+      </div>
+      <div class="area-card">
+        <h4>Shady Oaks</h4>
+        <p>Private, gated community of large lots, custom estates, and preserved oak trees.</p>
+      </div>
+      <div class="area-card">
+        <h4>Coventry Manor</h4>
+        <p>Gated community of established, upscale homes close to Town Square.</p>
+      </div>
+      <div class="area-card">
+        <h4>South Ridge Lakes &amp; Southlake Woods</h4>
+        <p>Established 1990s neighborhoods with larger lots, generally the most accessible price point in the city.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="wrap">
+    <div class="section-tag">FAQ</div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q"><span>What school district serves Southlake?</span><span class="chev">+</span></div>
+        <div class="faq-a">Most of the city is zoned to Carroll ISD, consistently one of the top-rated districts in DFW. A few sections of north Southlake, including parts of Clariden Ranch, zone to Northwest ISD instead. I always confirm the exact zoning for a specific address before you commit to a house.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Is Southlake a good fit for buyers who want walkability?</span><span class="chev">+</span></div>
+        <div class="faq-a">Southlake Town Square is the walkable heart of the city &mdash; a park-once district with more than 100 stores and 27 restaurants around Town Hall and Rustin Park. Homes and townhomes right around the square carry a premium for the location. For a feel of what a Saturday there actually looks like, <a href="journal-southlake-town-square.html" class="journal-link">this walk through Southlake Town Square</a> covers it in more detail.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>How do Southlake's neighborhoods differ from each other?</span><span class="chev">+</span></div>
+        <div class="faq-a">Mostly by era and lot size &mdash; Timarron centers on golf and mature trees, Carillon is newer with smaller lots and trails, Shady Oaks and Coventry Manor lean toward large-lot, gated estates, and South Ridge Lakes and Southlake Woods offer the most accessible price point on bigger, older lots. Worth comparing a few before deciding. If you're also weighing the border with Grapevine, <a href="journal-grapevine-main-street.html" class="journal-link">this walk through Grapevine's Main Street</a> is a useful comparison.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>What's the commute like from Southlake?</span><span class="chev">+</span></div>
+        <div class="faq-a">Southlake sits roughly 26 miles from downtown Dallas and about 25 miles from downtown Fort Worth, with quick access to DFW Airport. Commute times vary depending on which part of the city you're in and which direction you're headed.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Thinking about Southlake?</h2>
+    <p>Not sure yet what you're doing? Let's talk it through.</p>
+    <a href="#" class="btn-primary lead-capture-btn">Get in touch</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fwrap">
+    <div>
+      <div class="fbrand">Nathaniel Morales</div>
+      <div style="margin-top:6px;">Local Realty Agency &middot; Addison, TX</div>
+    </div>
+    <div>
+      <div>nate@deedanddoor.com</div>
+    </div>
+    <div>
+      <div>TREC#0799763</div>
+      <div style="margin-top:6px;"><a href="https://drive.google.com/file/d/1LQB6zGl3YIvo1HSE-Hczx-Ya6gvfZFJM/view?usp=sharing" target="_blank" rel="noopener">Texas Real Estate Commission Information About Brokerage Services</a></div>
+      <div style="margin-top:6px;"><a href="https://www.trec.texas.gov/forms/consumer-protection-notice" target="_blank" rel="noopener">Consumer Protection Notice</a>
+      <div style="margin-top:6px;"><a href="https://www.google.com/maps?cid=3353097722524686289" target="_blank" rel="noopener">Find us on Google</a></div></div>
+    </div>
+  </div>
+  <div class="wrap fnote">Median sale price above: Redfin city-level data. Redfin publishes this with a reporting lag, so the month shown next to the price is the latest period Redfin had available; refreshed automatically each month.</div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click', function(){
+    q.closest('.faq-item').classList.toggle('open');
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.navlinks .navdrop').forEach(function (drop) {
+    var closeTimer = null;
+    function openDrop() { clearTimeout(closeTimer); drop.classList.add('hover-open'); }
+    function scheduleClose() { clearTimeout(closeTimer); closeTimer = setTimeout(function () { drop.classList.remove('hover-open'); }, 400); }
+    drop.addEventListener('mouseenter', openDrop);
+    drop.addEventListener('mouseleave', scheduleClose);
+    drop.addEventListener('focusin', openDrop);
+    drop.addEventListener('focusout', scheduleClose);
+  });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var toggle = document.querySelector('.navtoggle');
+  var menu = document.querySelector('.navmobile');
+  var links = document.querySelector('.navlinks');
+  var cta = document.querySelector('.navcta');
+  if (!toggle || !menu || !links) return;
+  menu.innerHTML = links.innerHTML + (cta ? cta.outerHTML : '');
+  toggle.addEventListener('click', function () {
+    var isOpen = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  menu.addEventListener('click', function (e) {
+    var trigger = e.target.closest('.navdrop-trigger');
+    if (trigger) {
+      trigger.parentElement.classList.toggle('mobile-open');
+      return;
+    }
+    if (e.target.tagName === 'A') {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  var overlay = document.getElementById('lead-modal-overlay');
+  if (!overlay) return;
+  document.querySelectorAll('.lead-capture-btn').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      overlay.classList.add('open');
+    });
+  });
+  var closeBtn = overlay.querySelector('.lead-modal-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      overlay.classList.remove('open');
+    });
+  }
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) overlay.classList.remove('open');
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') overlay.classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
