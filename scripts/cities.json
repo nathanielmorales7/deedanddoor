@@ -108,6 +108,10 @@
     {
       "file": "rockwall.html",
       "redfin_region": "Rockwall, TX"
+    },
+    {
+      "file": "southlake.html",
+      "redfin_region": "Southlake, TX"
     }
   ]
 }
